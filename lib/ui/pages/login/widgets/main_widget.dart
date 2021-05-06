@@ -31,7 +31,9 @@ class MainWidget extends StatelessWidget {
                   FontWeight.bold,
                   white,
                   primary,
+                  primary,
                   const EdgeInsets.only(left: 30.0, right: 30.0, top: 150.0),
+                  const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   onSignupPressed)),
           ButtonShape(ButtonType.textButton).build(
               context: context,
@@ -42,7 +44,9 @@ class MainWidget extends StatelessWidget {
                   FontWeight.bold,
                   primary,
                   white,
+                  white,
                   const EdgeInsets.only(left: 30.0, right: 30.0, top: 30.0),
+                  const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   onLoginPressed))
         ],
       ),

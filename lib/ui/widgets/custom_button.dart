@@ -22,7 +22,7 @@ class CustomOutlinedButton implements ButtonShape {
   @override
   Widget build({@required BuildContext context, @required Button button}) {
     return Container(
-      width: MediaQuery.of(context).size.width,
+      width: context != null ? MediaQuery.of(context).size.width : 70,
       margin: button.margin,
       alignment: Alignment.center,
       child: new Row(
@@ -36,7 +36,8 @@ class CustomOutlinedButton implements ButtonShape {
                 ),
                 backgroundColor: button.backgroundColor,
                 shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(30.0)),
+                    borderRadius: new BorderRadius.circular(30.0),
+                    side: BorderSide(color: button.borderColor)),
               ),
               onPressed: button.onPressed,
               child: new Container(
@@ -66,7 +67,7 @@ class CustomTextButton implements ButtonShape {
   @override
   Widget build({@required BuildContext context, @required Button button}) {
     return Container(
-      width: MediaQuery.of(context).size.width,
+      width: context != null ? MediaQuery.of(context).size.width : 70,
       margin: button.margin,
       alignment: Alignment.center,
       child: new Row(
@@ -74,13 +75,11 @@ class CustomTextButton implements ButtonShape {
           new Expanded(
             child: new TextButton(
               style: TextButton.styleFrom(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20.0,
-                  horizontal: 20.0,
-                ),
+                padding: button.padding,
                 backgroundColor: button.backgroundColor,
                 shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(30.0)),
+                    borderRadius: new BorderRadius.circular(30.0),
+                    side: BorderSide(color: button.borderColor)),
               ),
               onPressed: button.onPressed,
               child: new Container(
@@ -113,8 +112,10 @@ class Button {
   FontWeight fontWeight;
   Color textColor;
   Color backgroundColor;
+  Color borderColor;
   EdgeInsets margin;
   Function onPressed;
+  EdgeInsets padding;
 
   Button(
       String text,
@@ -123,7 +124,9 @@ class Button {
       FontWeight fontWeight,
       Color textColor,
       Color backgroundColor,
+      Color borderColor,
       EdgeInsets margin,
+      EdgeInsets padding,
       Function onPressed) {
     this.text = text;
     this.textAlign = textAlign;
@@ -131,7 +134,9 @@ class Button {
     this.fontWeight = fontWeight;
     this.textColor = textColor;
     this.backgroundColor = backgroundColor;
+    this.borderColor = borderColor;
     this.margin = margin;
     this.onPressed = onPressed;
+    this.padding = padding;
   }
 }

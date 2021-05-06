@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/pages/home/contact_data.dart';
-import 'package:ourglass/ui/pages/home/contact_view.dart';
-import 'package:ourglass/ui/pages/home/widgets/home_page_body.dart';
+import 'package:ourglass/ui/pages/account/profile_screen.dart';
+import 'package:ourglass/ui/pages/home/widgets/bottom_bar_widget.dart';
+import 'package:ourglass/ui/pages/messaging/messaging_screen.dart';
 
 class HomePage extends StatefulWidget {
   @override
-  HomePageState createState() => HomePageState();
+  _HomePage createState() => _HomePage();
 }
 
-class HomePageState extends State<HomePage> {
+class _HomePage extends State<HomePage> {
   int _selectedTabIndex = 0;
 
   _changeIndex(int index) {
@@ -17,11 +17,19 @@ class HomePageState extends State<HomePage> {
     });
   }
 
+  final List<Widget> _children = [
+    Container(color: Colors.amber),
+    Container(color: Colors.lightBlue),
+    Container(color: Colors.red),
+    Container(color: Colors.red),
+    ProfilePage()
+  ];
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: Text('Friends'),
+        title: Text('[LOGO]'),
         centerTitle: true,
         elevation: 20.0,
         backgroundColor: Colors.blue,
@@ -29,31 +37,17 @@ class HomePageState extends State<HomePage> {
         actions: <Widget>[
           Padding(
             padding: EdgeInsets.only(right: 30),
-            child: Icon(
-              Icons.add,
-              size: 30,
+            child: IconButton(
+              icon: Icon(Icons.chat_bubble, size: 30),
+              onPressed: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => MessagingPage())),
             ),
           ),
         ],
       ),
-      body: HomePageBody(),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedTabIndex,
-        onTap: _changeIndex,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.blue,
-        iconSize: 30,
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: "Feed"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.play_arrow_outlined), label: "Video"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.music_note_outlined), label: "Music"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline), label: "Profile"),
-        ],
-      ),
+      body: _children[_selectedTabIndex],
+      bottomNavigationBar: BottomNavBarWidget(
+          selectedTabIndex: _selectedTabIndex, changeIndex: _changeIndex),
     );
   }
 }

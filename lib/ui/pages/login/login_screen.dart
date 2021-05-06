@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ourglass/ui/pages/home/home_screen.dart';
 import 'package:ourglass/ui/pages/login/widgets/main_widget.dart';
 import 'package:ourglass/ui/pages/login/widgets/login_widget.dart';
 import 'package:ourglass/ui/pages/login/widgets/signup_widget.dart';
@@ -15,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen>
     super.initState();
   }
 
-  Widget homePage() {
+  Widget startPage() {
     return new MainWidget(
         onLoginPressed: () => gotoLogin(), onSignupPressed: () => gotoSignup());
   }
@@ -29,7 +30,6 @@ class _LoginScreenState extends State<LoginScreen>
   }
 
   gotoLogin() {
-    //controller_0To1.forward(from: 0.0);
     _controller.animateToPage(
       0,
       duration: Duration(milliseconds: 800),
@@ -38,16 +38,11 @@ class _LoginScreenState extends State<LoginScreen>
   }
 
   gotoHome() {
-    //controller_minus1To0.reverse(from: 0.0);
-    _controller.animateToPage(
-      1,
-      duration: Duration(milliseconds: 800),
-      curve: Curves.bounceOut,
-    );
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));
   }
 
   gotoSignup() {
-    //controller_minus1To0.reverse(from: 0.0);
     _controller.animateToPage(
       2,
       duration: Duration(milliseconds: 800),
@@ -65,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen>
         child: PageView(
           controller: _controller,
           physics: new AlwaysScrollableScrollPhysics(),
-          children: <Widget>[loginPage(), homePage(), signupPage()],
+          children: <Widget>[loginPage(), startPage(), signupPage()],
           scrollDirection: Axis.horizontal,
         ));
   }

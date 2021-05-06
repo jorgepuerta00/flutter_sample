@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/pages/home/home_screen.dart';
+import 'package:ourglass/ui/pages/login/login_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: HomePage(),
+        child: LoginScreen(),
       ),
     );
   }

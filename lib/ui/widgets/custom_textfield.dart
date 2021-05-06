@@ -36,6 +36,35 @@ class CustomPasswordField extends StatelessWidget {
   }
 }
 
+class SearchTextField extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      padding: const EdgeInsets.only(left: 24.0, right: 24.0, bottom: 16.0),
+      child: new Row(
+        children: <Widget>[
+          new Expanded(
+            child: TextField(
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.blueAccent,
+              ),
+              decoration: InputDecoration(
+                  contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                  prefixIcon: Icon(Icons.search),
+                  border: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blueAccent, width: 10.0),
+                  ),
+                  hintText: 'Search'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
