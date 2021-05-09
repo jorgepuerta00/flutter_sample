@@ -13,6 +13,7 @@ const placeholder = Colors.blueGrey;
 const separator = Colors.blueAccent;
 const white = Colors.white;
 const black = Colors.black;
+const grey = Colors.grey;
 
 const Color yellow = Color(0xffFDC054);
 const Color mediumYellow = Color(0xffFDB846);

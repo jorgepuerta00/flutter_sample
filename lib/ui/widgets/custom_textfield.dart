@@ -66,6 +66,8 @@ class SearchTextField extends StatelessWidget {
 }
 
 class CustomTextField extends StatelessWidget {
+  final String hintText;
+  CustomTextField({this.hintText});
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -89,7 +91,7 @@ class CustomTextField extends StatelessWidget {
               textAlign: TextAlign.left,
               decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: 'ourglass@oiga.com',
+                hintText: hintText,
                 hintStyle: TextStyle(color: muted),
               ),
             ),

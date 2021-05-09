@@ -30,12 +30,12 @@ class _ContactListItem extends ListTile {
   _ContactListItem(Contact contact, bool showButton, bool showLastMessage,
       Function onPressed)
       : super(
-            title: Text(contact.fullName),
+            title: Text(contact.name),
             subtitle: showLastMessage ? Text(contact.message) : null,
             leading: Container(
                 padding: EdgeInsets.only(top: 8.0),
                 child: CircleAvatar(
-                  child: Text(contact.fullName[0]),
+                  child: Text(contact.name[0]),
                   radius: 40,
                 )),
             trailing: Visibility(
@@ -45,6 +45,7 @@ class _ContactListItem extends ListTile {
                         contact.invited ? "Invited" : "Invite",
                         TextAlign.center,
                         15,
+                        70,
                         FontWeight.bold,
                         contact.invited ? Colors.white : Colors.blueAccent,
                         contact.invited ? Colors.blueAccent : Colors.white,
@@ -56,9 +57,9 @@ class _ContactListItem extends ListTile {
 }
 
 class Contact {
-  final String fullName;
+  final String name;
   final String email;
   final bool invited;
   final String message;
-  const Contact({this.fullName, this.email, this.invited, this.message});
+  const Contact({this.name, this.email, this.invited, this.message});
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_icon.dart';
-import 'package:ourglass/ui/widgets/title_widget.dart';
+import 'package:ourglass/ui/widgets/custom_title_widget.dart';
 import 'box_decoration_widget.dart';
 
 class MainWidget extends StatelessWidget {
@@ -25,9 +25,10 @@ class MainWidget extends StatelessWidget {
           ButtonShape(ButtonType.outlinedButton).build(
               context: context,
               button: new Button(
-                  "SIGN UP",
+                  "Sign Up",
                   TextAlign.center,
                   15,
+                  70,
                   FontWeight.bold,
                   white,
                   primary,
@@ -38,9 +39,10 @@ class MainWidget extends StatelessWidget {
           ButtonShape(ButtonType.textButton).build(
               context: context,
               button: new Button(
-                  "LOGIN",
+                  "Log In",
                   TextAlign.center,
                   15,
+                  70,
                   FontWeight.bold,
                   primary,
                   white,

@@ -4,8 +4,8 @@ import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_divider.dart';
 import 'package:ourglass/ui/widgets/custom_icon.dart';
 import 'package:ourglass/ui/widgets/custom_textfield.dart';
-import 'package:ourglass/ui/widgets/label_widget.dart';
-import 'box_decoration_widget.dart';
+import 'package:ourglass/ui/widgets/custom_label_widget.dart';
+import '../widgets/box_decoration_widget.dart';
 
 class SignUpWidget extends StatelessWidget {
   final Function onPressed;
@@ -23,15 +23,15 @@ class SignUpWidget extends StatelessWidget {
               size: 50.0,
               padding: EdgeInsets.all(100.0)),
           LabelWidget(
-              text: "EMAIL",
+              text: "Email",
               fontWeight: FontWeight.bold,
               color: primary,
               fontSize: 15.0,
               padding: const EdgeInsets.only(left: 40.0)),
-          CustomTextField(),
+          CustomTextField(hintText: 'ourglass@oiga.com'),
           CustomDivider(),
           LabelWidget(
-              text: "PASSWORD",
+              text: "Password",
               fontWeight: FontWeight.bold,
               color: primary,
               fontSize: 15.0,
@@ -39,7 +39,7 @@ class SignUpWidget extends StatelessWidget {
           CustomPasswordField(),
           CustomDivider(),
           LabelWidget(
-              text: "CONFIRM PASSWORD",
+              text: "Confirm Password",
               fontWeight: FontWeight.bold,
               color: primary,
               fontSize: 15.0,
@@ -57,9 +57,10 @@ class SignUpWidget extends StatelessWidget {
           ButtonShape(ButtonType.textButton).build(
               context: context,
               button: new Button(
-                  "SIGN UP",
+                  "Next",
                   TextAlign.center,
                   15,
+                  70,
                   FontWeight.bold,
                   white,
                   primary,

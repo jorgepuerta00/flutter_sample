@@ -4,8 +4,8 @@ import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_divider.dart';
 import 'package:ourglass/ui/widgets/custom_icon.dart';
 import 'package:ourglass/ui/widgets/custom_textfield.dart';
-import 'package:ourglass/ui/widgets/label_widget.dart';
-import 'box_decoration_widget.dart';
+import 'package:ourglass/ui/widgets/custom_label_widget.dart';
+import '../widgets/box_decoration_widget.dart';
 
 class LoginWidget extends StatelessWidget {
   final Function onPressed;
@@ -23,15 +23,15 @@ class LoginWidget extends StatelessWidget {
               size: 50.0,
               padding: EdgeInsets.all(120.0)),
           LabelWidget(
-              text: "EMAIL",
+              text: "Email",
               fontWeight: FontWeight.bold,
               color: primary,
               fontSize: 15.0,
               padding: const EdgeInsets.only(left: 40.0)),
-          CustomTextField(),
+          CustomTextField(hintText: 'ourglass@oiga.com'),
           CustomDivider(),
           LabelWidget(
-              text: "PASSWORD",
+              text: "Password",
               fontWeight: FontWeight.bold,
               color: primary,
               fontSize: 15.0,
@@ -49,14 +49,16 @@ class LoginWidget extends StatelessWidget {
           ButtonShape(ButtonType.textButton).build(
               context: context,
               button: new Button(
-                  "LOGIN",
+                  "Log in",
                   TextAlign.center,
                   15,
+                  70,
                   FontWeight.bold,
+                  primary,
                   white,
                   primary,
-                  primary,
-                  const EdgeInsets.only(left: 30.0, right: 30.0, top: 20.0),
+                  const EdgeInsets.only(
+                      left: 30.0, right: 30.0, top: 20.0, bottom: 20),
                   const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   onPressed)),
         ],

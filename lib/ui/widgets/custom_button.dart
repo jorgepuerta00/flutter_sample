@@ -67,7 +67,7 @@ class CustomTextButton implements ButtonShape {
   @override
   Widget build({@required BuildContext context, @required Button button}) {
     return Container(
-      width: context != null ? MediaQuery.of(context).size.width : 70,
+      width: context != null ? MediaQuery.of(context).size.width : button.width,
       margin: button.margin,
       alignment: Alignment.center,
       child: new Row(
@@ -109,6 +109,7 @@ class Button {
   String text;
   TextAlign textAlign;
   double fontSize;
+  double width;
   FontWeight fontWeight;
   Color textColor;
   Color backgroundColor;
@@ -121,6 +122,7 @@ class Button {
       String text,
       TextAlign textAlign,
       double fontSize,
+      double width,
       FontWeight fontWeight,
       Color textColor,
       Color backgroundColor,
@@ -131,6 +133,7 @@ class Button {
     this.text = text;
     this.textAlign = textAlign;
     this.fontSize = fontSize;
+    this.width = width;
     this.fontWeight = fontWeight;
     this.textColor = textColor;
     this.backgroundColor = backgroundColor;

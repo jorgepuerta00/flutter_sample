@@ -4,7 +4,7 @@ import 'package:ourglass/ui/pages/friends/widgets/contact_data.dart';
 import 'package:ourglass/ui/pages/friends/widgets/contact_view.dart';
 import 'package:ourglass/ui/widgets/custom_avatar.dart';
 import 'package:ourglass/ui/widgets/custom_textfield.dart';
-import 'package:ourglass/ui/widgets/label_widget.dart';
+import 'package:ourglass/ui/widgets/custom_label_widget.dart';
 
 class AddFriendPage extends StatelessWidget {
   @override
@@ -50,8 +50,8 @@ class AddFriendPage extends StatelessWidget {
                       shrinkWrap: true,
                       itemBuilder: (context, index) => Container(
                         child: CustomAvatar(
-                            avatar: kContacts[index].fullName[0],
-                            text: kContacts[index].fullName),
+                            avatar: kContacts[index].name[0],
+                            text: kContacts[index].name),
                         margin: const EdgeInsets.only(top: 2),
                       ),
                     ),

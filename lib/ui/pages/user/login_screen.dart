@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ourglass/ui/pages/home/home_screen.dart';
-import 'package:ourglass/ui/pages/login/widgets/main_widget.dart';
-import 'package:ourglass/ui/pages/login/widgets/login_widget.dart';
-import 'package:ourglass/ui/pages/login/widgets/signup_widget.dart';
+import 'package:ourglass/ui/pages/user/signup/create_user.dart';
+import 'package:ourglass/ui/pages/user/widgets/main_widget.dart';
+import 'package:ourglass/ui/pages/user/login/login_widget.dart';
+import 'package:ourglass/ui/pages/user/signup/signup_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -26,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen>
   }
 
   Widget signupPage() {
-    return new SignUpWidget(onPressed: () => gotoHome());
+    return new SignUpWidget(onPressed: () => gotoCreateUser());
   }
 
   gotoLogin() {
@@ -35,6 +36,11 @@ class _LoginScreenState extends State<LoginScreen>
       duration: Duration(milliseconds: 800),
       curve: Curves.bounceOut,
     );
+  }
+
+  gotoCreateUser() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (_) => CreateUserPage()));
   }
 
   gotoHome() {

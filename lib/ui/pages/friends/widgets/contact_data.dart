@@ -2,82 +2,82 @@ import 'package:ourglass/ui/pages/friends/widgets/contact_view.dart';
 
 const kContacts = <Contact>[
   Contact(
-      fullName: 'Romain Hoogmoed',
+      name: 'Romain Hoogmoed',
       email: 'romain.hoogmoed@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: true),
   Contact(
-      fullName: 'Emilie Olsen',
+      name: 'Emilie Olsen',
       email: 'emilie.olsen@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: false),
   Contact(
-      fullName: 'Téo Lefevre',
+      name: 'Téo Lefevre',
       email: 'téo.lefevre@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: true),
   Contact(
-      fullName: 'Nicole Cruz',
+      name: 'Nicole Cruz',
       email: 'nicole.cruz@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: false),
   Contact(
-      fullName: 'Ramna Peixoto',
+      name: 'Ramna Peixoto',
       email: 'ramna.peixoto@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: true),
   Contact(
-      fullName: 'Jose Ortiz',
+      name: 'Jose Ortiz',
       email: 'jose.ortiz@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: false),
   Contact(
-      fullName: 'Alma Christensen',
+      name: 'Alma Christensen',
       email: 'alma.christensen@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: false),
   Contact(
-      fullName: 'Sergio Hill',
+      name: 'Sergio Hill',
       email: 'sergio.hill@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: false),
   Contact(
-      fullName: 'Malo Gonzalez',
+      name: 'Malo Gonzalez',
       email: 'malo.gonzalez@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: true),
   Contact(
-      fullName: 'Miguel Owens',
+      name: 'Miguel Owens',
       email: 'miguel.owens@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: true),
   Contact(
-      fullName: 'Lilou Dumont',
+      name: 'Lilou Dumont',
       email: 'lilou.dumont@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: false),
   Contact(
-      fullName: 'Ashley Stewart',
+      name: 'Ashley Stewart',
       email: 'ashley.stewart@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: false),
   Contact(
-      fullName: 'Roman Zhang',
+      name: 'Roman Zhang',
       email: 'roman.zhang@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: false),
   Contact(
-      fullName: 'Ryan Roberts',
+      name: 'Ryan Roberts',
       email: 'ryan.roberts@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: false),
   Contact(
-      fullName: 'Sadie Thomas',
+      name: 'Sadie Thomas',
       email: 'sadie.thomas@example.com',
       message: 'Lorem ipsum dolor sit amet',
       invited: false),
   Contact(
-      fullName: 'Belen Serrano',
+      name: 'Belen Serrano',
       email: 'belen.serrano@example.com ',
       message: 'Lorem ipsum dolor sit amet',
       invited: false)

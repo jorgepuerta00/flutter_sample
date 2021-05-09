@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/pages/account/profile_screen.dart';
-import 'package:ourglass/ui/pages/home/widgets/bottom_bar_widget.dart';
-import 'package:ourglass/ui/pages/messaging/messaging_screen.dart';
+import 'package:ourglass/ui/widgets/custom_bottom_navigator.dart';
+import 'package:ourglass/ui/widgets/custom_tab_item.dart';
+import 'package:ourglass/ui/widgets/custom_tab_navigator.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,45 +9,65 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State<HomePage> {
-  int _selectedTabIndex = 0;
+  var _currentTab = TabItem.feed;
+  final _navigatorKeys = {
+    TabItem.feed: GlobalKey<NavigatorState>(),
+    TabItem.audiovisual: GlobalKey<NavigatorState>(),
+    TabItem.newm: GlobalKey<NavigatorState>(),
+    TabItem.channels: GlobalKey<NavigatorState>(),
+    TabItem.profile: GlobalKey<NavigatorState>(),
+  };
 
-  _changeIndex(int index) {
-    setState(() {
-      _selectedTabIndex = index;
-    });
+  void _selectTab(TabItem tabItem) {
+    if (tabItem == _currentTab) {
+      // pop to first route
+      _navigatorKeys[tabItem].currentState.popUntil((route) => route.isFirst);
+    } else {
+      setState(() => _currentTab = tabItem);
+    }
   }
-
-  final List<Widget> _children = [
-    Container(color: Colors.amber),
-    Container(color: Colors.lightBlue),
-    Container(color: Colors.red),
-    Container(color: Colors.red),
-    ProfilePage()
-  ];
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: AppBar(
-        title: Text('[LOGO]'),
-        centerTitle: true,
-        elevation: 20.0,
-        backgroundColor: Colors.blue,
-        shadowColor: Colors.grey,
-        actions: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(right: 30),
-            child: IconButton(
-              icon: Icon(Icons.chat_bubble, size: 30),
-              onPressed: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (_) => MessagingPage())),
-            ),
-          ),
-        ],
+    return WillPopScope(
+      onWillPop: () async {
+        final isFirstRouteInCurrentTab =
+            !await _navigatorKeys[_currentTab].currentState.maybePop();
+        if (isFirstRouteInCurrentTab) {
+          // if not on the 'main' tab
+          if (_currentTab != TabItem.feed) {
+            // select 'main' tab
+            _selectTab(TabItem.feed);
+            // back button handled by app
+            return false;
+          }
+        }
+        // let system handle back button if we're on the first route
+        return isFirstRouteInCurrentTab;
+      },
+      child: Scaffold(
+        body: Stack(children: <Widget>[
+          _buildOffstageNavigator(TabItem.feed),
+          _buildOffstageNavigator(TabItem.audiovisual),
+          _buildOffstageNavigator(TabItem.newm),
+          _buildOffstageNavigator(TabItem.channels),
+          _buildOffstageNavigator(TabItem.profile),
+        ]),
+        bottomNavigationBar: BottomNavigation(
+          currentTab: _currentTab,
+          onSelectTab: _selectTab,
+        ),
       ),
-      body: _children[_selectedTabIndex],
-      bottomNavigationBar: BottomNavBarWidget(
-          selectedTabIndex: _selectedTabIndex, changeIndex: _changeIndex),
+    );
+  }
+
+  Widget _buildOffstageNavigator(TabItem tabItem) {
+    return Offstage(
+      offstage: _currentTab != tabItem,
+      child: TabNavigator(
+        navigatorKey: _navigatorKeys[tabItem],
+        tabItem: tabItem,
+      ),
     );
   }
 }

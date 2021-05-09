@@ -47,6 +47,8 @@ flutter:
     - assets/images/mountains.jpeg
     - assets/images/mountains.jpg
     - assets/images/avatar-backgroud.png
+    - assets/images/avatar-empty.jpeg
+    - assets/images/qr-code.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

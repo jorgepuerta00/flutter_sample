@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/pages/login/login_screen.dart';
+import 'package:ourglass/ui/pages/user/login_screen.dart';
 
 void main() {
   runApp(MyApp());
