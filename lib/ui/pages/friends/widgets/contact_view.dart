@@ -33,7 +33,7 @@ class _ContactListItem extends ListTile {
             title: Text(contact.name),
             subtitle: showLastMessage ? Text(contact.message) : null,
             leading: Container(
-                padding: EdgeInsets.only(top: 8.0),
+                padding: EdgeInsets.symmetric(vertical: 2),
                 child: CircleAvatar(
                   child: Text(contact.name[0]),
                   radius: 40,
@@ -50,7 +50,7 @@ class _ContactListItem extends ListTile {
                         contact.invited ? Colors.white : Colors.blueAccent,
                         contact.invited ? Colors.blueAccent : Colors.white,
                         contact.invited ? Colors.white : Colors.blueAccent,
-                        const EdgeInsets.only(left: 0.0, right: 0.0, top: 0.0),
+                        const EdgeInsets.symmetric(horizontal: 10),
                         null,
                         onPressed)),
                 visible: showButton));

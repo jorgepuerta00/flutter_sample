@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ourglass/constants/constants.dart';
-import 'package:ourglass/ui/pages/wallet/deposit.dart';
+import 'package:ourglass/ui/pages/wallet/deposit_screen.dart';
+import 'package:ourglass/ui/pages/wallet/widgets/report_data.dart';
+import 'package:ourglass/ui/pages/wallet/widgets/report_view.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
+import 'package:ourglass/ui/widgets/custom_label_widget.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class OverviewWidget extends StatelessWidget {
@@ -44,7 +47,10 @@ class OverviewWidget extends StatelessWidget {
                     children: <Widget>[
                       CustomText(text: 'Balance', fontSize: 20),
                       Divider(),
-                      CustomText(text: 'US 1.000.00', fontSize: 20)
+                      CustomText(
+                          fontSize: 18,
+                          text: new String.fromCharCodes(
+                              new Runes('\u0024 1.000.00'))),
                     ],
                   )
                 ],
@@ -83,7 +89,23 @@ class OverviewWidget extends StatelessWidget {
                       null,
                       () => gotoDepositPage()))
             ],
-          ))
+          )),
+          Container(
+              margin: EdgeInsets.symmetric(horizontal: 42),
+              child: Column(
+                children: <Widget>[
+                  LabelWidget(
+                      text: "Recent reports",
+                      color: black,
+                      fontSize: 20,
+                      padding: const EdgeInsets.only(
+                          left: 5.0, right: 40.0, top: 25, bottom: 10)),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.4,
+                    child: ReportList(kReports),
+                  )
+                ],
+              ))
         ],
       ),
     );

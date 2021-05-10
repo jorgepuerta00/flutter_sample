@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/wallet/widgets/overview_widget.dart';
+import 'package:ourglass/ui/pages/wallet/widgets/payment.dart';
 import 'package:ourglass/ui/pages/wallet/widgets/qr_widget.dart';
+import 'package:ourglass/ui/pages/wallet/widgets/report_widget.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class WalletPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: DefaultTabController(
+    return DefaultTabController(
       length: 4,
       child: Scaffold(
         backgroundColor: white,
@@ -36,13 +37,13 @@ class WalletPage extends StatelessWidget {
           child: TabBarView(
             children: [
               OverviewWidget(),
-              Icon(Icons.directions_transit),
-              Icon(Icons.directions_bike),
+              ReportWidget(),
+              PaymentWidget(),
               QRWidget(),
             ],
           ),
         ),
       ),
-    ));
+    );
   }
 }

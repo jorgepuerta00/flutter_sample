@@ -3,7 +3,6 @@ import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/user/signup/find_friends.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_label_widget.dart';
-import 'package:ourglass/ui/widgets/custom_textfield.dart';
 
 class ProfilePhotoPage extends StatelessWidget {
   @override
