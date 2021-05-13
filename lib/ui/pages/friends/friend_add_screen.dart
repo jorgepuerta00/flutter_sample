@@ -32,31 +32,29 @@ class AddFriendPage extends StatelessWidget {
           ),
         ],
       ),
-      body: SafeArea(
-        bottom: true,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 8.0),
-          child: ListView(
-            children: <Widget>[
-              SearchTextField(),
-              Container(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 24.0, top: 16.0),
-                  child: SizedBox(
-                    height: 100,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: kContacts.length,
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) => Container(
-                        child: CustomAvatar(
-                            avatar: kContacts[index].name[0],
-                            text: kContacts[index].name),
-                        margin: const EdgeInsets.only(top: 2),
-                      ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            SearchTextField(),
+            Container(
+                padding:
+                    const EdgeInsets.only(left: 16.0, right: 24.0, top: 16.0),
+                child: SizedBox(
+                  height: 100,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: kContacts.length,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) => Container(
+                      child: CustomAvatar(
+                          avatar: kContacts[index].name[0],
+                          text: kContacts[index].name),
+                      margin: const EdgeInsets.only(top: 2),
                     ),
-                  )),
-              LabelWidget(
+                  ),
+                )),
+            Container(
+              child: LabelWidget(
                 padding: const EdgeInsets.only(top: 20.0),
                 textAlign: TextAlign.center,
                 text: "Suggestions",
@@ -64,12 +62,13 @@ class AddFriendPage extends StatelessWidget {
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.6,
+            ),
+            Expanded(
+              child: Container(
                 child: ContactList(kContacts, false, false, () => {}),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

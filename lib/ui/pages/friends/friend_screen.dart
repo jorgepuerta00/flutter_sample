@@ -34,35 +34,33 @@ class FriendPage extends StatelessWidget {
           ),
         ],
       ),
-      body: SafeArea(
-        bottom: true,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 24.0),
-          child: ListView(
-            children: <Widget>[
-              SearchTextField(),
-              Padding(
-                padding: const EdgeInsets.only(left: 16.0),
-                child: ListTile(
-                    title: Text('Find friends nearby'),
-                    leading: Icon(Icons.location_on_outlined),
-                    onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => LocationPage()))),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16.0),
-                child: ListTile(
-                    title: Text('Invite friend'),
-                    leading: Icon(Icons.person_add_alt_1_outlined),
-                    onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => InviteFriendPage()))),
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.7,
-                child: ContactList(kContacts, false, false, () => {}),
-              ),
-            ],
-          ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            SearchTextField(),
+            Container(
+                child: Padding(
+              padding: const EdgeInsets.only(left: 16.0),
+              child: ListTile(
+                  title: Text('Find friends nearby'),
+                  leading: Icon(Icons.location_on_outlined),
+                  onTap: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => LocationPage()))),
+            )),
+            Container(
+                child: Padding(
+              padding: const EdgeInsets.only(left: 16.0),
+              child: ListTile(
+                  title: Text('Invite friend'),
+                  leading: Icon(Icons.person_add_alt_1_outlined),
+                  onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => InviteFriendPage()))),
+            )),
+            Expanded(
+                child: Container(
+              child: ContactList(kContacts, false, false, () => {}),
+            ))
+          ],
         ),
       ),
     );

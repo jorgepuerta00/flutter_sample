@@ -19,11 +19,12 @@ class ReportList extends StatelessWidget {
                 text: _reports[index].title,
                 fontWeight: FontWeight.bold,
               ),
-              leading: Image.asset(
-                'assets/images/video-player.png',
-                fit: BoxFit.cover,
-                color: Colors.blueAccent,
-              ),
+              leading: Container(
+                  color: Colors.black12,
+                  child: Image.asset(
+                    'assets/images/video-player.png',
+                    fit: BoxFit.cover,
+                  )),
               subtitle: Container(
                   padding: const EdgeInsets.only(top: 10, bottom: 10),
                   child: Column(

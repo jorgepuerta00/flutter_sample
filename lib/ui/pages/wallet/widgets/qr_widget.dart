@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ourglass/constants/constants.dart';
-import 'package:ourglass/ui/pages/user/widgets/box_decoration_widget.dart';
-import 'package:ourglass/ui/widgets/custom_label_widget.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class QRWidget extends StatelessWidget {

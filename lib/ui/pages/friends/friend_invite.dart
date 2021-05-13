@@ -43,19 +43,15 @@ class _InviteFriendPage extends State<InviteFriendPage> {
           ),
         ],
       ),
-      body: SafeArea(
-        bottom: true,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 8.0),
-          child: ListView(
-            children: <Widget>[
-              SearchTextField(),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.8,
-                child: ContactList(kContacts, true, false, _changePressed),
-              )
-            ],
-          ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            SearchTextField(),
+            Expanded(
+              flex: 1,
+              child: ContactList(kContacts, true, false, _changePressed),
+            )
+          ],
         ),
       ),
     );

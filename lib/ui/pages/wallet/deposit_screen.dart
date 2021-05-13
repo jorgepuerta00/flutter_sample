@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ourglass/constants/constants.dart';
-import 'package:ourglass/ui/widgets/custom_button.dart';
-import 'package:ourglass/ui/widgets/custom_switch.dart';
+import 'package:ourglass/ui/pages/wallet/widgets/balance_widget.dart';
+import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class DepositPage extends StatelessWidget {
   @override
@@ -16,29 +16,39 @@ class DepositPage extends StatelessWidget {
           brightness: Brightness.light,
           backgroundColor: Colors.transparent,
           title: Text(
-            'Deposit',
+            'Transfer',
             style: TextStyle(color: darkGrey),
           ),
           elevation: 0),
       body: SafeArea(
         top: true,
         child: SingleChildScrollView(
-          child: Padding(
-            padding:
-                EdgeInsets.only(left: 16.0, right: 16.0, top: kToolbarHeight),
+          child: Container(
             child: Column(
               children: <Widget>[
-                Divider(),
-                ListTile(
-                  title: Text('Bank Account transfer'),
-                  trailing: Icon(Icons.chevron_right),
-                ),
-                Divider(),
-                ListTile(
-                  title: Text('QR Code transfer'),
-                  trailing: Icon(Icons.chevron_right),
-                ),
-                Divider(),
+                BalanceWidget(balance: '10.000.00'),
+                Center(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Column(children: <Widget>[
+                      IconButton(
+                        icon: Image.asset('assets/images/no-image.png'),
+                        iconSize: 150,
+                        onPressed: () {},
+                      ),
+                      CustomText(text: 'Bank Account transfer')
+                    ]),
+                    Column(children: <Widget>[
+                      IconButton(
+                        icon: Image.asset('assets/images/no-image.png'),
+                        iconSize: 150,
+                        onPressed: () {},
+                      ),
+                      CustomText(text: 'QR Code transfer')
+                    ])
+                  ],
+                )),
               ],
             ),
           ),

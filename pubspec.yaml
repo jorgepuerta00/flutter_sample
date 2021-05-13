@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_map: any
   google_maps_flutter: ^2.0.1
   cupertino_icons: ^1.0.2
 
@@ -50,6 +51,7 @@ flutter:
     - assets/images/avatar-empty.jpeg
     - assets/images/qr-code.png
     - assets/images/video-player.png
+    - assets/images/no-image.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

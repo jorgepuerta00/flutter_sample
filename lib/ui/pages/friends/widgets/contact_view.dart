@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/widgets/custom_button.dart';
+import 'package:ourglass/ui/widgets/custom_chip.dart';
 
 class ContactList extends StatelessWidget {
   final List<Contact> _contacts;
@@ -39,27 +39,16 @@ class _ContactListItem extends ListTile {
                   radius: 40,
                 )),
             trailing: Visibility(
-                child: new ButtonShape(ButtonType.textButton).build(
-                    context: null,
-                    button: new Button(
-                        contact.invited ? "Invited" : "Invite",
-                        TextAlign.center,
-                        15,
-                        70,
-                        FontWeight.bold,
-                        contact.invited ? Colors.white : Colors.blueAccent,
-                        contact.invited ? Colors.blueAccent : Colors.white,
-                        contact.invited ? Colors.white : Colors.blueAccent,
-                        const EdgeInsets.symmetric(horizontal: 10),
-                        null,
-                        onPressed)),
+                child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: new CustomChip(
+                        activeText: "Invited", inactiveText: "Invite")),
                 visible: showButton));
 }
 
 class Contact {
   final String name;
   final String email;
-  final bool invited;
   final String message;
-  const Contact({this.name, this.email, this.invited, this.message});
+  const Contact({this.name, this.email, this.message});
 }
