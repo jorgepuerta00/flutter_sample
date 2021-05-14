@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/widgets/custom_tab_item.dart';
 
 class BottomNavigation extends StatelessWidget {
@@ -26,7 +25,6 @@ class BottomNavigation extends StatelessWidget {
 
   BottomNavigationBarItem _buildItem(TabItem tabItem) {
     return BottomNavigationBarItem(
-      backgroundColor: white,
       icon: Icon(
         tabIcon[tabItem],
         color: _colorTabMatching(tabItem),

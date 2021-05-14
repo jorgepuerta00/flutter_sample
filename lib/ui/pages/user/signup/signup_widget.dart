@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_divider.dart';
 import 'package:ourglass/ui/widgets/custom_icon.dart';
 import 'package:ourglass/ui/widgets/custom_textfield.dart';
 import 'package:ourglass/ui/widgets/custom_label_widget.dart';
-import '../widgets/box_decoration_widget.dart';
 
 class SignUpWidget extends StatelessWidget {
   final Function onPressed;
@@ -14,18 +12,15 @@ class SignUpWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Container(
       height: MediaQuery.of(context).size.height,
-      decoration: backgroundImage(white, 'assets/images/full-bloom.png', 0.05),
       child: new Column(
         children: <Widget>[
           CustomIcon(
               iconData: Icons.play_circle_fill,
-              color: primary,
               size: 50.0,
               padding: EdgeInsets.all(100.0)),
           LabelWidget(
               text: "Email",
               fontWeight: FontWeight.bold,
-              color: primary,
               fontSize: 15.0,
               padding: const EdgeInsets.only(left: 40.0)),
           CustomTextField(hintText: 'ourglass@oiga.com'),
@@ -33,7 +28,6 @@ class SignUpWidget extends StatelessWidget {
           LabelWidget(
               text: "Password",
               fontWeight: FontWeight.bold,
-              color: primary,
               fontSize: 15.0,
               padding: const EdgeInsets.only(left: 40.0)),
           CustomPasswordField(),
@@ -41,7 +35,6 @@ class SignUpWidget extends StatelessWidget {
           LabelWidget(
               text: "Confirm Password",
               fontWeight: FontWeight.bold,
-              color: primary,
               fontSize: 15.0,
               padding: const EdgeInsets.only(left: 40.0)),
           CustomPasswordField(),
@@ -49,7 +42,6 @@ class SignUpWidget extends StatelessWidget {
           LabelWidget(
               text: "Already have an account?",
               fontWeight: FontWeight.bold,
-              color: primary,
               fontSize: 15.0,
               padding: const EdgeInsets.only(right: 30.0),
               textAlign: TextAlign.end,
@@ -62,9 +54,9 @@ class SignUpWidget extends StatelessWidget {
                   15,
                   70,
                   FontWeight.bold,
-                  white,
-                  primary,
-                  primary,
+                  Colors.white,
+                  Colors.blueAccent,
+                  Colors.blueAccent,
                   const EdgeInsets.only(left: 30.0, right: 30.0, top: 50.0),
                   const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   onPressed)),

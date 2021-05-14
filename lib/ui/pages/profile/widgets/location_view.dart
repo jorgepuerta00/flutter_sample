@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class LocationList extends StatelessWidget {
@@ -16,7 +15,7 @@ class LocationList extends StatelessWidget {
         return Column(
           children: <Widget>[
             ListTile(
-              title: CustomText(text: _locations[index].name, color: grey),
+              title: CustomText(text: _locations[index].name),
             ),
             Divider(), //                           <-- Divider
           ],

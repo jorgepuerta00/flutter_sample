@@ -1,24 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
+import 'package:ourglass/constants/theme.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_switch.dart';
+import 'package:provider/provider.dart';
 
 class EditPrivacyModePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var _themeProvider = Provider.of<ThemeChanger>(context);
+
+    changeTheme() {
+      _themeProvider.setTheme(
+          _themeProvider.getTheme == lightTheme ? darkTheme : lightTheme);
+    }
+
     return Scaffold(
-      backgroundColor: white,
       appBar: AppBar(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
           brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
-          title: Text(
-            'Privacy Mode',
-            style: TextStyle(color: darkGrey),
-          ),
+          title: Text('Privacy Mode'),
           elevation: 0),
       body: SafeArea(
         top: true,
@@ -29,35 +29,35 @@ class EditPrivacyModePage extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Divider(),
-                ListTile(
-                  title: Text('Privacy Mode'),
-                  subtitle: Text('Mode short description'),
-                  trailing: SwitchScreen(),
-                ),
+                CustomSwitch(
+                    title: 'Private Mode',
+                    subtitle: 'Mode short description',
+                    onPressed: () => print("CustomSwitch")),
                 Divider(),
-                ListTile(
-                  title: Text('Family & Friends Mode'),
-                  subtitle: Text('Mode short description'),
-                  trailing: SwitchScreen(),
-                ),
+                CustomSwitch(
+                    title: 'Family & Friends Mode',
+                    subtitle: 'Mode short description',
+                    onPressed: () => print("CustomSwitch")),
                 Divider(),
-                ListTile(
-                  title: Text('Customized Group Mode'),
-                  subtitle: Text('Mode short description'),
-                  trailing: SwitchScreen(),
-                ),
+                CustomSwitch(
+                    title: 'Customized Group Mode',
+                    subtitle: 'Mode short description',
+                    onPressed: () => print("CustomSwitch")),
                 Divider(),
-                ListTile(
-                  title: Text('Professional Mode'),
-                  subtitle: Text('Mode short description'),
-                  trailing: SwitchScreen(),
-                ),
+                CustomSwitch(
+                    title: 'Professional Mode',
+                    subtitle: 'Mode short description',
+                    onPressed: () => print("CustomSwitch")),
                 Divider(),
-                ListTile(
-                  title: Text('Public Mode'),
-                  subtitle: Text('Mode short description'),
-                  trailing: SwitchScreen(),
-                ),
+                CustomSwitch(
+                    title: 'Public Mode',
+                    subtitle: 'Mode short description',
+                    onPressed: () => print("CustomSwitch")),
+                Divider(),
+                CustomSwitch(
+                    title: 'Dark Mode',
+                    subtitle: 'Mode short description',
+                    onPressed: () => changeTheme()),
                 ButtonShape(ButtonType.textButton).build(
                     context: context,
                     button: new Button(
@@ -69,8 +69,7 @@ class EditPrivacyModePage extends StatelessWidget {
                         Colors.blueAccent,
                         Colors.white,
                         Colors.blueAccent,
-                        const EdgeInsets.only(
-                            left: 140, right: 140, top: 100.0),
+                        const EdgeInsets.only(left: 140, right: 140, top: 20.0),
                         null,
                         () => {}))
               ],

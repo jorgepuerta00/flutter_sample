@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/feed/widgets/feed_data.dart';
 import 'package:ourglass/ui/pages/feed/widgets/feed_view.dart';
 import 'package:ourglass/ui/pages/messaging/messaging_screen.dart';
@@ -9,17 +8,9 @@ class FeedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.black,
-        ),
         brightness: Brightness.light,
-        backgroundColor: Colors.transparent,
-        title: Text(
-          'Feed',
-          style: TextStyle(color: darkGrey),
-        ),
+        title: Text('Feed'),
         leading: Padding(
           padding: EdgeInsets.only(left: 16),
           child: Icon(
@@ -40,6 +31,8 @@ class FeedPage extends StatelessWidget {
         ],
       ),
       body: Center(
+          child: Container(
+        padding: const EdgeInsets.only(top: 8.0),
         child: Column(
           children: <Widget>[
             SearchTextField(),
@@ -50,7 +43,7 @@ class FeedPage extends StatelessWidget {
             )
           ],
         ),
-      ),
+      )),
     );
   }
 }

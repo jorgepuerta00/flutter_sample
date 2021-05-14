@@ -65,7 +65,7 @@ class BuildPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      color: Colors.white,
+      color: Colors.transparent,
       child: children[tabItem],
     ));
   }
@@ -73,7 +73,7 @@ class BuildPage extends StatelessWidget {
   final Map<TabItem, Widget> children = {
     TabItem.feed: FeedPage(),
     TabItem.audiovisual: MediaPage(),
-    TabItem.newm: Container(color: Colors.white),
+    TabItem.newm: Container(color: Colors.transparent),
     TabItem.channels: ChannelPage(),
     TabItem.profile: ProfilePage()
   };

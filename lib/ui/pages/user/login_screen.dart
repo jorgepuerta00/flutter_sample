@@ -61,13 +61,15 @@ class _LoginScreenState extends State<LoginScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: MediaQuery.of(context).size.height,
-        child: PageView(
-          controller: _controller,
-          physics: new AlwaysScrollableScrollPhysics(),
-          children: <Widget>[loginPage(), startPage(), signupPage()],
-          scrollDirection: Axis.horizontal,
-        ));
+    return Scaffold(
+        bottomNavigationBar: null,
+        body: Container(
+            height: MediaQuery.of(context).size.height,
+            child: PageView(
+              controller: _controller,
+              physics: new AlwaysScrollableScrollPhysics(),
+              children: <Widget>[loginPage(), startPage(), signupPage()],
+              scrollDirection: Axis.horizontal,
+            )));
   }
 }

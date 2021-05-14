@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/wallet/widgets/payment_data.dart';
 import 'package:ourglass/ui/pages/wallet/widgets/payment_view.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
@@ -19,7 +18,7 @@ class PaymentWidget extends StatelessWidget {
                   children: <Widget>[
                     CustomText(text: 'Balance', fontSize: 20),
                     Divider(
-                      color: white,
+                      color: Colors.white,
                       height: 15,
                     ),
                     CustomText(
@@ -27,7 +26,7 @@ class PaymentWidget extends StatelessWidget {
                         text: new String.fromCharCodes(
                             new Runes('\u0024 1.000.00'))),
                     Divider(
-                      color: white,
+                      color: Colors.white,
                       height: 15,
                     ),
                     Divider(),

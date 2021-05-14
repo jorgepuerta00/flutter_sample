@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/friends/widgets/contact_data.dart';
 import 'package:ourglass/ui/pages/friends/widgets/contact_view.dart';
 import 'package:ourglass/ui/widgets/custom_avatar.dart';
@@ -10,17 +9,9 @@ class AddFriendPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.black,
-        ),
         brightness: Brightness.light,
-        backgroundColor: Colors.transparent,
-        title: Text(
-          'Add friends',
-          style: TextStyle(color: darkGrey),
-        ),
+        title: Text('Add friends'),
         elevation: 0,
         actions: <Widget>[
           Padding(
@@ -33,6 +24,8 @@ class AddFriendPage extends StatelessWidget {
         ],
       ),
       body: Center(
+          child: Container(
+        padding: const EdgeInsets.only(top: 8.0),
         child: Column(
           children: <Widget>[
             SearchTextField(),
@@ -58,7 +51,6 @@ class AddFriendPage extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 20.0),
                 textAlign: TextAlign.center,
                 text: "Suggestions",
-                color: Colors.black,
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -70,7 +62,7 @@ class AddFriendPage extends StatelessWidget {
             )
           ],
         ),
-      ),
+      )),
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_label_widget.dart';
 import 'package:ourglass/ui/widgets/custom_textfield.dart';
@@ -8,17 +7,9 @@ class EditEmailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
       appBar: AppBar(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
           brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
-          title: Text(
-            'Change email',
-            style: TextStyle(color: darkGrey),
-          ),
+          title: Text('Change email'),
           elevation: 0),
       body: SafeArea(
         top: true,
@@ -26,14 +17,12 @@ class EditEmailPage extends StatelessWidget {
           LabelWidget(
               text: "Current Email",
               fontWeight: FontWeight.bold,
-              color: black,
               fontSize: 15.0,
               padding: const EdgeInsets.only(left: 40.0, top: 40)),
           CustomTextField(hintText: 'Current email here'),
           LabelWidget(
               text: "New Email",
               fontWeight: FontWeight.bold,
-              color: black,
               fontSize: 15.0,
               padding: const EdgeInsets.only(left: 40.0, top: 40)),
           CustomTextField(hintText: 'New email here'),

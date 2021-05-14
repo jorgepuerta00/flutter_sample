@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:latlong/latlong.dart';
 
 class LocationPage extends StatefulWidget {
@@ -12,17 +11,9 @@ class _LocationPage extends State<LocationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
         appBar: AppBar(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
           brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
-          title: Text(
-            'Location',
-            style: TextStyle(color: darkGrey),
-          ),
+          title: Text('Location'),
           elevation: 0,
           actions: <Widget>[
             Padding(

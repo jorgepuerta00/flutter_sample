@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 
 class CustomChip extends StatefulWidget {
   final String activeText;
@@ -16,13 +15,13 @@ class _CustomChip extends State<CustomChip> {
   @override
   Widget build(BuildContext context) {
     return ChoiceChip(
+        backgroundColor: Colors.white,
         label: isSelected ? Text(widget.activeText) : Text(widget.inactiveText),
-        backgroundColor: white,
-        side: BorderSide(color: primary),
-        selectedColor: primary,
+        side: BorderSide(color: Colors.blueAccent),
+        selectedColor: Colors.blueAccent,
         labelStyle: isSelected
-            ? TextStyle(color: white, fontWeight: FontWeight.bold)
-            : TextStyle(color: primary, fontWeight: FontWeight.bold),
+            ? TextStyle(color: Colors.white, fontWeight: FontWeight.bold)
+            : TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold),
         selected: isSelected,
         onSelected: (selected) {
           setState(() {

@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/friends/friend_screen.dart';
 import 'package:ourglass/ui/pages/profile/edit_profile.dart';
 import 'package:ourglass/ui/pages/security/secutiry_screen.dart';
 import 'package:ourglass/ui/pages/user/login_screen.dart';
 import 'package:ourglass/ui/pages/wallet/wallet_screen.dart';
+import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    gotoLoginPage() {
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (c) => LoginScreen()), (r) => false);
+    }
+
     return Scaffold(
-      backgroundColor: white,
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.black,
-        ),
         brightness: Brightness.light,
-        backgroundColor: Colors.transparent,
-        title: Text(
-          'Profile',
-          style: TextStyle(color: darkGrey),
-        ),
+        title: CustomText(text: 'Profile'),
         elevation: 0,
         actions: <Widget>[
           Padding(
@@ -43,24 +40,23 @@ class ProfilePage extends StatelessWidget {
               children: <Widget>[
                 CircleAvatar(
                   maxRadius: 48,
-                  backgroundImage:
-                      AssetImage('assets/images/avatar-backgroud.png'),
+                  backgroundImage: AssetImage('assets/images/reza.png'),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
                       left: 8, right: 8, top: 16, bottom: 1),
                   child: Text(
-                    'Bill Gates',
+                    'Reza Dari',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(1),
-                  child: Text('@billgates'),
+                  child: Text('@rezadari'),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(5),
-                  child: Text('Antioquia, Medellin'),
+                  child: Text('United States, California'),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(20),
@@ -89,8 +85,7 @@ class ProfilePage extends StatelessWidget {
                 Divider(),
                 ListTile(
                   title: Text('Log out'),
-                  onTap: () => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => LoginScreen())),
+                  onTap: () => gotoLoginPage(),
                 ),
               ],
             ),

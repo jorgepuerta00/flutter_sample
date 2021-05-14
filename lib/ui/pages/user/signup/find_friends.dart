@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/home/home_screen.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_label_widget.dart';
-import 'package:ourglass/ui/widgets/custom_textfield.dart';
 
 class FindFriendsPage extends StatelessWidget {
   @override
@@ -14,17 +12,9 @@ class FindFriendsPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: white,
       appBar: AppBar(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
           brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
-          title: Text(
-            'Find your friends',
-            style: TextStyle(color: darkGrey),
-          ),
+          title: Text('Find your friends'),
           elevation: 0),
       body: SafeArea(
         top: true,
@@ -33,7 +23,6 @@ class FindFriendsPage extends StatelessWidget {
               text:
                   "See which of your contacts are on “Name app” already and add them on your friends list.",
               fontWeight: FontWeight.bold,
-              color: black,
               fontSize: 15.0,
               padding: const EdgeInsets.only(
                   left: 40.0, right: 40.0, top: 40, bottom: 60)),

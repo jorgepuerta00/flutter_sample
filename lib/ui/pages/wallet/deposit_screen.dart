@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/wallet/widgets/balance_widget.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 
@@ -8,18 +7,8 @@ class DepositPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
       appBar: AppBar(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
-          brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
-          title: Text(
-            'Transfer',
-            style: TextStyle(color: darkGrey),
-          ),
-          elevation: 0),
+          brightness: Brightness.light, title: Text('Transfer'), elevation: 0),
       body: SafeArea(
         top: true,
         child: SingleChildScrollView(

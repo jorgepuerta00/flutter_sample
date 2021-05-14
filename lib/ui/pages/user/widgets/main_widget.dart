@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_icon.dart';
 import 'package:ourglass/ui/widgets/custom_title_widget.dart';
@@ -13,12 +12,13 @@ class MainWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Container(
       height: MediaQuery.of(context).size.height,
-      decoration: backgroundImage(primary, 'assets/images/full-bloom.png', 0.1),
+      decoration: backgroundImage(
+          Colors.blueAccent, 'assets/images/full-bloom.png', 0.1),
       child: new Column(
         children: <Widget>[
           CustomIcon(
               iconData: Icons.play_circle_fill,
-              color: white,
+              color: Colors.white,
               size: 40.0,
               padding: EdgeInsets.only(top: 250.0)),
           TitleWidget(),
@@ -30,9 +30,9 @@ class MainWidget extends StatelessWidget {
                   15,
                   70,
                   FontWeight.bold,
-                  white,
-                  primary,
-                  primary,
+                  Colors.white,
+                  Colors.blueAccent,
+                  Colors.blueAccent,
                   const EdgeInsets.only(left: 30.0, right: 30.0, top: 150.0),
                   const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   onSignupPressed)),
@@ -44,9 +44,9 @@ class MainWidget extends StatelessWidget {
                   15,
                   70,
                   FontWeight.bold,
-                  primary,
-                  white,
-                  white,
+                  Colors.blueAccent,
+                  Colors.white,
+                  Colors.white,
                   const EdgeInsets.only(left: 30.0, right: 30.0, top: 30.0),
                   const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   onLoginPressed))

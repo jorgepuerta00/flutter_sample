@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/user/signup/find_friends.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_label_widget.dart';
@@ -13,25 +12,13 @@ class ProfilePhotoPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: white,
-      appBar: AppBar(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
-          brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
-          title: Text(
-            'Add Profile Photo',
-            style: TextStyle(color: darkGrey),
-          ),
-          elevation: 0),
+      appBar: AppBar(title: Text('Add Profile Photo'), elevation: 0),
       body: SafeArea(
         top: true,
         child: Column(children: <Widget>[
           LabelWidget(
               text: "Add a profile photo so your friends know it’s you.",
               fontWeight: FontWeight.bold,
-              color: black,
               fontSize: 15.0,
               padding: const EdgeInsets.only(
                   left: 40.0, right: 40.0, top: 40, bottom: 60)),
@@ -47,7 +34,6 @@ class ProfilePhotoPage extends StatelessWidget {
                   child: Icon(
                 Icons.camera_alt_outlined,
                 size: 24,
-                color: white,
               )),
               padding: EdgeInsets.all(35),
               shape: CircleBorder(),

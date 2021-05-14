@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/wallet/widgets/report_data.dart';
 import 'package:ourglass/ui/pages/wallet/widgets/report_view.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
@@ -9,18 +8,8 @@ class ReportPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
       appBar: AppBar(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
-          brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
-          title: Text(
-            'Reports',
-            style: TextStyle(color: darkGrey),
-          ),
-          elevation: 0),
+          brightness: Brightness.light, title: Text('Reports'), elevation: 0),
       body: SafeArea(
         top: true,
         child: Center(

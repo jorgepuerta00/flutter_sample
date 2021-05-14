@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ourglass/constants/theme.dart';
 import 'package:ourglass/ui/pages/user/login_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,12 +10,22 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeChanger(lightTheme)),
+      ],
+      child: MaterialAppWithTheme(),
+    );
+  }
+}
+
+class MaterialAppWithTheme extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final theme = Provider.of<ThemeChanger>(context);
     return MaterialApp(
-      title: 'OurGlass Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-      ),
-      home: MyHomePage(title: 'OurGlass Demo Login'),
+      theme: theme.getTheme,
+      home: MyHomePage(),
     );
   }
 }

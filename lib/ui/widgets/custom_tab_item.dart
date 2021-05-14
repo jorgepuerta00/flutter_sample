@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 
 enum TabItem { feed, audiovisual, newm, channels, profile }
 
@@ -12,11 +11,11 @@ const Map<TabItem, String> tabName = {
 };
 
 const Map<TabItem, MaterialColor> activeTabColor = {
-  TabItem.feed: primary,
-  TabItem.audiovisual: primary,
-  TabItem.newm: primary,
-  TabItem.channels: primary,
-  TabItem.profile: primary
+  TabItem.feed: Colors.blue,
+  TabItem.audiovisual: Colors.blue,
+  TabItem.newm: Colors.blue,
+  TabItem.channels: Colors.blue,
+  TabItem.profile: Colors.blue
 };
 
 const Map<TabItem, IconData> tabIcon = {

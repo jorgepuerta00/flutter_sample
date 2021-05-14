@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/wallet/widgets/overview_widget.dart';
 import 'package:ourglass/ui/pages/wallet/widgets/payment.dart';
 import 'package:ourglass/ui/pages/wallet/widgets/qr_widget.dart';
@@ -12,17 +11,9 @@ class WalletPage extends StatelessWidget {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-        backgroundColor: white,
         appBar: AppBar(
-            iconTheme: IconThemeData(
-              color: Colors.black,
-            ),
             brightness: Brightness.light,
-            backgroundColor: Colors.transparent,
-            title: Text(
-              'My Digital Wallet',
-              style: TextStyle(color: darkGrey),
-            ),
+            title: Text('My Digital Wallet'),
             actions: <Widget>[
               Padding(
                 padding: EdgeInsets.only(right: 30),
@@ -33,11 +24,15 @@ class WalletPage extends StatelessWidget {
               ),
             ],
             bottom: TabBar(
+              isScrollable: true,
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.grey,
+              indicatorSize: TabBarIndicatorSize.label,
               tabs: [
-                Tab(child: CustomText(text: 'Overview', color: darkGrey)),
-                Tab(child: CustomText(text: 'Reports', color: darkGrey)),
-                Tab(child: CustomText(text: 'Payments', color: darkGrey)),
-                Tab(child: CustomText(text: 'My QR', color: darkGrey))
+                Tab(child: CustomText(text: 'Overview')),
+                Tab(child: CustomText(text: 'Reports')),
+                Tab(child: CustomText(text: 'Payments')),
+                Tab(child: CustomText(text: 'My QR'))
               ],
             ),
             elevation: 0),

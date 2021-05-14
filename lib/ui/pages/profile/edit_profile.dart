@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/profile/edit_fullname.dart';
 import 'package:ourglass/ui/pages/profile/edit_location.dart';
 import 'package:ourglass/ui/pages/profile/edit_username.dart';
@@ -8,17 +7,9 @@ class EditProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
       appBar: AppBar(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
           brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
-          title: Text(
-            'Edit profile',
-            style: TextStyle(color: darkGrey),
-          ),
+          title: Text('Edit profile'),
           elevation: 0),
       body: SafeArea(
         top: true,
@@ -30,8 +21,7 @@ class EditProfilePage extends StatelessWidget {
               children: <Widget>[
                 CircleAvatar(
                   maxRadius: 48,
-                  backgroundImage:
-                      AssetImage('assets/images/avatar-backgroud.png'),
+                  backgroundImage: AssetImage('assets/images/reza.png'),
                   child: Container(
                       child: MaterialButton(
                     onPressed: () {},
@@ -41,7 +31,6 @@ class EditProfilePage extends StatelessWidget {
                         child: Icon(
                       Icons.camera_alt_outlined,
                       size: 24,
-                      color: white,
                     )),
                     padding: EdgeInsets.all(35),
                     shape: CircleBorder(),

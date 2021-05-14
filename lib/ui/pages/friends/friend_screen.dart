@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/friends/friend_add_screen.dart';
 import 'package:ourglass/ui/pages/friends/friend_invite.dart';
 import 'package:ourglass/ui/pages/friends/friend_location.dart';
@@ -11,17 +10,9 @@ class FriendPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.black,
-        ),
         brightness: Brightness.light,
-        backgroundColor: Colors.transparent,
-        title: Text(
-          'Friends',
-          style: TextStyle(color: darkGrey),
-        ),
+        title: Text('Friends'),
         elevation: 0,
         actions: <Widget>[
           Padding(
@@ -35,6 +26,8 @@ class FriendPage extends StatelessWidget {
         ],
       ),
       body: Center(
+          child: Container(
+        padding: const EdgeInsets.only(top: 8.0),
         child: Column(
           children: <Widget>[
             SearchTextField(),
@@ -62,7 +55,7 @@ class FriendPage extends StatelessWidget {
             ))
           ],
         ),
-      ),
+      )),
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/channels/create_channel.dart';
 import 'package:ourglass/ui/pages/channels/widgets/channel_data.dart';
 import 'package:ourglass/ui/pages/channels/widgets/channel_view.dart';
@@ -11,17 +10,9 @@ class ChannelPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.black,
-        ),
         brightness: Brightness.light,
-        backgroundColor: Colors.transparent,
-        title: Text(
-          'Channels',
-          style: TextStyle(color: darkGrey),
-        ),
+        title: Text('Channels'),
         leading: Padding(
           padding: EdgeInsets.only(left: 16),
           child: Icon(
@@ -39,17 +30,14 @@ class ChannelPage extends StatelessWidget {
                     Icons.person,
                     size: 30,
                   ),
-                  CustomText(
-                    text: 'My Channel',
-                    color: grey,
-                  )
+                  CustomText(text: 'My Channel')
                 ],
               )),
         ],
       ),
       body: SafeArea(
         bottom: true,
-        child: Padding(
+        child: Container(
           padding: const EdgeInsets.only(top: 8.0),
           child: ListView(
             children: <Widget>[

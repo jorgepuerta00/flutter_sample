@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/security/change_email.dart';
 import 'package:ourglass/ui/pages/security/change_password.dart';
 import 'package:ourglass/ui/pages/security/privacy_mode.dart';
@@ -8,17 +7,9 @@ class SecurityPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: white,
       appBar: AppBar(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
           brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
-          title: Text(
-            'Security',
-            style: TextStyle(color: darkGrey),
-          ),
+          title: Text('Security'),
           elevation: 0),
       body: SafeArea(
         top: true,

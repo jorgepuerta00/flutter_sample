@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/constants/constants.dart';
 import 'package:ourglass/ui/pages/user/signup/add_photo.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_label_widget.dart';
@@ -14,17 +13,9 @@ class CreateUserPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: white,
       appBar: AppBar(
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          ),
           brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
-          title: Text(
-            'Create user',
-            style: TextStyle(color: darkGrey),
-          ),
+          title: Text('Create user'),
           elevation: 0),
       body: SafeArea(
         top: true,
@@ -33,7 +24,6 @@ class CreateUserPage extends StatelessWidget {
               text:
                   "Please pick a username for your account. You can edit it later.",
               fontWeight: FontWeight.bold,
-              color: black,
               fontSize: 15.0,
               padding: const EdgeInsets.only(
                   left: 40.0, right: 40.0, top: 40, bottom: 60)),
