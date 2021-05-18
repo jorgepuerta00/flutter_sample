@@ -20,6 +20,7 @@ class MediaPage extends StatelessWidget {
                       child: TabBar(
                         isScrollable: true,
                         indicatorSize: TabBarIndicatorSize.label,
+                        indicatorColor: Colors.transparent,
                         tabs: [
                           Tab(child: CustomText(text: 'Audio', fontSize: 24)),
                           Tab(child: CustomText(text: 'Video', fontSize: 24))

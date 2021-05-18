@@ -106,8 +106,11 @@ class AudioWidget extends StatelessWidget {
             color: Colors.transparent,
             child: new Container(
               decoration: new BoxDecoration(
-                  color: Colors.white,
+                  border: Border.all(color: Colors.white),
+                  color: Theme.of(context).primaryColor,
                   borderRadius: new BorderRadius.only(
+                      bottomRight: const Radius.circular(60.0),
+                      bottomLeft: const Radius.circular(60.0),
                       topLeft: const Radius.circular(50.0),
                       topRight: const Radius.circular(50.0))),
               child: new Wrap(
@@ -136,11 +139,11 @@ class AudioWidget extends StatelessWidget {
                             ))
                       ]),
                   new ListTile(
-                      title: Text("Share"),
+                      title: CustomText(text: "Share"),
                       leading: Icon(Icons.share_outlined)),
                   Divider(),
                   new ListTile(
-                      title: Text("View User Profile"),
+                      title: CustomText(text: "View User Profile"),
                       leading: Icon(Icons.person_outline)),
                   Container(
                     height: 30,

@@ -57,8 +57,11 @@ class ReportPage extends StatelessWidget {
             color: Colors.transparent,
             child: new Container(
               decoration: new BoxDecoration(
-                  color: Colors.white,
+                  border: Border.all(color: Colors.white),
+                  color: Theme.of(context).primaryColor,
                   borderRadius: new BorderRadius.only(
+                      bottomRight: const Radius.circular(60.0),
+                      bottomLeft: const Radius.circular(60.0),
                       topLeft: const Radius.circular(50.0),
                       topRight: const Radius.circular(50.0))),
               child: new Wrap(
@@ -87,15 +90,15 @@ class ReportPage extends StatelessWidget {
                             ))
                       ]),
                   new ListTile(
-                    title: Text("Date (oldest)"),
+                    title: CustomText(text: "Date (oldest)"),
                   ),
                   Divider(),
                   new ListTile(
-                    title: Text("Date (newest)"),
+                    title: CustomText(text: "Date (newest)"),
                   ),
                   Divider(),
                   new ListTile(
-                    title: Text("Most popular"),
+                    title: CustomText(text: "Most popular"),
                   ),
                   Container(
                     height: 30,

@@ -16,6 +16,7 @@ class SignUpWidget extends StatelessWidget {
         children: <Widget>[
           CustomIcon(
               iconData: Icons.play_circle_fill,
+              color: Colors.blueAccent,
               size: 50.0,
               padding: EdgeInsets.all(100.0)),
           LabelWidget(

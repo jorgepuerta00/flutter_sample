@@ -22,7 +22,7 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		HgWA7s3HGOPIEz3ixCvXrS0gJdU=
+		yZwXMJ5gKaO2qmbMHjKJQJLhSlI=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		MGRT/aP7Q1veg2DJdthCjIuVrcc=
+		rOp+wr9cHzzqlRQM1o/S6Y3BPaQ=
 		</data>
 		<key>Base.lproj/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<data>
-		7sADbjEITrcMI/7J+hMSvMRnZ9Y=
+		rMzoLvZw5j08lXQsrFO70+/ipE0=
 		</data>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<data>
@@ -42,11 +42,11 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/UIViewController-BYZ-38-t0r.nib</key>
 		<data>
-		iSlImak3P/VBWB97ioqqKQ2XVqk=
+		6Himc5iM+tybQ7jM3hv6MqfOuyY=
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		SybbRgq8NADP46FP0yTR4G+VSxM=
+		hSd53Xg867vzRikr5ebWjMRJb6c=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		431YDAFIZLr0Yvxr0mCfcN3oYE4=
+		eAHwAyLcK0GfJuv148d2YjFeG/E=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		/QjcyhISzJrnd5FmJcvTCcZXz9g=
+		gFtu2tm+obLZFQgsCr1D04+OXAY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES</key>
 		<data>
-		q3A1bRhv40X5Rbmujy4h7eeJGDc=
+		TX82Hm6fpSys/j+3Omf5xdIlTQg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/IcoMoon.ttf</key>
 		<data>
@@ -100,6 +100,10 @@
 		<data>
 		ylmLBrvDU0/+zmi/ev0SCOgihn0=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/reza.png</key>
+		<data>
+		gtvdfvrOGlC+LrPswFk4M1GeeZs=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/video-player.png</key>
 		<data>
 		giisLfvvkoCENj8zG+Duq2UU7BE=
@@ -114,7 +118,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		qMzlN9/AD/sfdSgm1SiOPnlyTAU=
+		m7WAGmcojfZHyRsWbDb8xq5EidY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -139,6 +143,18 @@
 		<key>Frameworks/Flutter.framework/icudtl.dat</key>
 		<data>
 		GQZCpXMybn3RCh1MXi5WGSJg97k=
+		</data>
+		<key>Frameworks/shared_preferences.framework/Info.plist</key>
+		<data>
+		c5j+nT1i+XjUlOQt38GLXDEF974=
+		</data>
+		<key>Frameworks/shared_preferences.framework/_CodeSignature/CodeResources</key>
+		<data>
+		uBhPiii+AEDONZ5ScW6L1U04ins=
+		</data>
+		<key>Frameworks/shared_preferences.framework/shared_preferences</key>
+		<data>
+		MIwhhEKGFgYkceVIpb5zkSAkzY8=
 		</data>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>
 		<data>
@@ -802,7 +818,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		QO2wmxHNetZYVEIXTfPmJn2eEyM=
+		mud5Vw5K7ZRpmx58UIbEvaArcM8=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -843,7 +859,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WGwyfkdB+gLw5ZCew5KRHlSW/9kyB4oNIH4Wzb+PSFo=
+			bmyWPBCKTnWfd0GQ62lZZ4frxrq5oTLnH8T71NCS1Fw=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
@@ -857,14 +873,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LBEBJu3FyFz7YchZ6bDbGIi2/qtujt5bzRqwM4obBzU=
+			nnXafHf6/hmwFPKwseWNb8ajkCmFqNxEZxv7chOqdP8=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			r/VvRy36CaO+/YFISOwi4afCwdNaUEtusUJ3GbDLnDA=
+			1iSf5Tm0xUWklY9US4yGJsGhz7TeIfm+TCZW86CHdNE=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
@@ -878,14 +894,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			70KvYGIqAhz2eGor+pgGTFkHDJStrYDyucg5ggCGViE=
+			1Kf3BEpc//i4eEEgRcd2toOJf0fhUvRGooBPVPPJIrU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/App</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EdpDG/gJEci78T2XFukc7NJgJLVY6GRW3eK4dhZB1Ao=
+			3hej5AwQtWpA1QtcE3sAGUQ7zb2LpJ/7EMpCT6zVxdA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -899,14 +915,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nrwUgpxY6N+gY1CDyzGTSjci1Pv5pgrdlvI3oS0Uyhk=
+			EEZzL+czkRmg2A4++IPlWm46iQYPv6TbP/yYVDineAQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eSZZIM+HEFHJrrT7ZRE4QhGY60OAhh28rq3f5pRX08A=
+			SMVn2NCNSMqEIvFRXogswVuqbix2mFfOwv882uog9EQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -920,7 +936,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4MYNwTxnT/WImQC5NO+7wsKyFEfq6j2QDZSuYgtljxw=
+			7W89vbU6lK2bfmT1BFEYHM0nTSlq2zC9fWHJEwsF8Is=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/fonts/IcoMoon.ttf</key>
@@ -979,6 +995,13 @@
 			BFPmmF9Q4LulaVbPMEZAt2gfmOqcZdnk6H9yBI3UTMY=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/reza.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3n6qFphOdEkpw0JCp7DmYYBLgduhQFOc2R/bjdL0m3I=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/video-player.png</key>
 		<dict>
 			<key>hash2</key>
@@ -1004,7 +1027,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rwkuqM58UqV+jm7/3frsdbfoG/LjWOC6qF1aifKJJVc=
+			jy5OMVvB/aKiOL9t50Yl4R9CVL3s0aYje7UzyVeIJYI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1047,6 +1070,27 @@
 			<key>hash2</key>
 			<data>
 			PxmoJrR/h+ORdYBLNxblG7h3l/244/4/McWAKWZ0TDY=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/x8v8WAqzgCmH8EnTngXeoh77wuNYRhWstuMvlCW+ss=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Q3+WOY62zNY7WMqD+3sRbRUxRqPBYsaEvNscKB+vrJI=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences.framework/shared_preferences</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			JyuJ1ZT+IGt3SBC7yyrgQkrp+1Z4rDjYhKlMvohIB/E=
 			</data>
 		</dict>
 		<key>GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom</key>

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ourglass/ui/pages/friends/friend_screen.dart';
 import 'package:ourglass/ui/pages/profile/edit_profile.dart';
 import 'package:ourglass/ui/pages/security/secutiry_screen.dart';
+import 'package:ourglass/ui/pages/settings/settings_screen.dart';
 import 'package:ourglass/ui/pages/user/login_screen.dart';
 import 'package:ourglass/ui/pages/wallet/wallet_screen.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
@@ -81,6 +82,13 @@ class ProfilePage extends StatelessWidget {
                   trailing: Icon(Icons.chevron_right),
                   onTap: () => Navigator.of(context)
                       .push(MaterialPageRoute(builder: (_) => SecurityPage())),
+                ),
+                Divider(),
+                ListTile(
+                  title: Text('Settings'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => SettingsPage())),
                 ),
                 Divider(),
                 ListTile(

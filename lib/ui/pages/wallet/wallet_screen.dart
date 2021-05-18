@@ -25,8 +25,6 @@ class WalletPage extends StatelessWidget {
             ],
             bottom: TabBar(
               isScrollable: true,
-              labelColor: Colors.black,
-              unselectedLabelColor: Colors.grey,
               indicatorSize: TabBarIndicatorSize.label,
               tabs: [
                 Tab(child: CustomText(text: 'Overview')),
@@ -61,8 +59,11 @@ class WalletPage extends StatelessWidget {
             color: Colors.transparent,
             child: new Container(
               decoration: new BoxDecoration(
-                  color: Colors.white,
+                  border: Border.all(color: Colors.white),
+                  color: Theme.of(context).primaryColor,
                   borderRadius: new BorderRadius.only(
+                      bottomRight: const Radius.circular(60.0),
+                      bottomLeft: const Radius.circular(60.0),
                       topLeft: const Radius.circular(50.0),
                       topRight: const Radius.circular(50.0))),
               child: new Wrap(
@@ -91,11 +92,11 @@ class WalletPage extends StatelessWidget {
                             ))
                       ]),
                   new ListTile(
-                    title: Text("Share"),
+                    title: CustomText(text: "Share"),
                   ),
                   Divider(),
                   new ListTile(
-                    title: Text("Download QR"),
+                    title: CustomText(text: "Download QR"),
                   ),
                   Container(
                     height: 30,

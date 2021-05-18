@@ -15,6 +15,7 @@ class LoginWidget extends StatelessWidget {
       child: new Column(
         children: <Widget>[
           CustomIcon(
+              color: Colors.blueAccent,
               iconData: Icons.play_circle_fill,
               size: 50.0,
               padding: EdgeInsets.all(120.0)),

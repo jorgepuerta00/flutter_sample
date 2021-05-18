@@ -9,6 +9,7 @@ class BottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      selectedItemColor: Colors.blue,
       type: BottomNavigationBarType.fixed,
       items: [
         _buildItem(TabItem.feed),

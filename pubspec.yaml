@@ -24,7 +24,6 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_map: any
-  google_maps_flutter: ^2.0.1
   cupertino_icons: ^1.0.2
   provider: ^5.0.0
   shared_preferences: ^2.0.5
