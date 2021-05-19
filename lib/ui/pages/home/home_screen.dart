@@ -15,7 +15,7 @@ class _HomePage extends State<HomePage> {
     TabItem.audiovisual: GlobalKey<NavigatorState>(),
     TabItem.newm: GlobalKey<NavigatorState>(),
     TabItem.channels: GlobalKey<NavigatorState>(),
-    TabItem.profile: GlobalKey<NavigatorState>(),
+    TabItem.library: GlobalKey<NavigatorState>(),
   };
 
   void _selectTab(TabItem tabItem) {
@@ -51,7 +51,7 @@ class _HomePage extends State<HomePage> {
           _buildOffstageNavigator(TabItem.audiovisual),
           _buildOffstageNavigator(TabItem.newm),
           _buildOffstageNavigator(TabItem.channels),
-          _buildOffstageNavigator(TabItem.profile),
+          _buildOffstageNavigator(TabItem.library),
         ]),
         bottomNavigationBar: BottomNavigation(
           currentTab: _currentTab,

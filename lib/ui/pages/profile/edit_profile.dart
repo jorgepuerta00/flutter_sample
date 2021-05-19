@@ -20,37 +20,45 @@ class EditProfilePage extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 CircleAvatar(
-                  maxRadius: 48,
-                  backgroundImage: AssetImage('assets/images/reza.png'),
-                  child: Container(
-                      child: MaterialButton(
-                    onPressed: () {},
-                    color: Colors.black.withOpacity(0.2),
-                    textColor: Colors.white,
+                    radius: 48.0,
+                    backgroundImage: AssetImage('assets/images/reza.png'),
                     child: Container(
-                        child: Icon(
-                      Icons.camera_alt_outlined,
-                      size: 24,
-                    )),
-                    padding: EdgeInsets.all(35),
-                    shape: CircleBorder(),
-                  )),
-                ),
+                        child: Container(
+                      decoration: new BoxDecoration(
+                          borderRadius:
+                              const BorderRadius.all(const Radius.circular(48)),
+                          color: new Color.fromRGBO(1, 0, 0, 0.3)),
+                      child: CircleAvatar(
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: CircleAvatar(
+                              backgroundColor: Colors.white,
+                              radius: 12.0,
+                              child: Icon(
+                                Icons.camera_alt,
+                                size: 15.0,
+                                color: Color(0xFF404040),
+                              ),
+                            ),
+                          ),
+                          radius: 48.0,
+                          backgroundColor: Colors.transparent),
+                    ))),
                 Padding(
                   padding: const EdgeInsets.only(
                       left: 8, right: 8, top: 16, bottom: 1),
                   child: Text(
-                    'Bill Gates',
+                    'Reza Dari',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(1),
-                  child: Text('@billgates'),
+                  child: Text('@rezadari'),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(5),
-                  child: Text('Antioquia, Medellin'),
+                  child: Text('United States, California'),
                 ),
                 Divider(),
                 ListTile(

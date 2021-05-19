@@ -16,7 +16,7 @@ class BottomNavigation extends StatelessWidget {
         _buildItem(TabItem.audiovisual),
         _buildItem(TabItem.newm),
         _buildItem(TabItem.channels),
-        _buildItem(TabItem.profile),
+        _buildItem(TabItem.library),
       ],
       onTap: (index) => onSelectTab(
         TabItem.values[index],

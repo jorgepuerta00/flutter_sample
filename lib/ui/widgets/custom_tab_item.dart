@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-enum TabItem { feed, audiovisual, newm, channels, profile }
+enum TabItem { feed, audiovisual, newm, channels, library }
 
 const Map<TabItem, String> tabName = {
   TabItem.feed: 'Feed',
   TabItem.audiovisual: 'Media',
   TabItem.newm: 'New',
   TabItem.channels: 'Channels',
-  TabItem.profile: 'Profile',
+  TabItem.library: 'Library',
 };
 
 const Map<TabItem, MaterialColor> activeTabColor = {
@@ -15,7 +15,7 @@ const Map<TabItem, MaterialColor> activeTabColor = {
   TabItem.audiovisual: Colors.blue,
   TabItem.newm: Colors.blue,
   TabItem.channels: Colors.blue,
-  TabItem.profile: Colors.blue
+  TabItem.library: Colors.blue
 };
 
 const Map<TabItem, IconData> tabIcon = {
@@ -23,5 +23,5 @@ const Map<TabItem, IconData> tabIcon = {
   TabItem.audiovisual: Icons.play_arrow_outlined,
   TabItem.newm: Icons.add,
   TabItem.channels: Icons.rss_feed_outlined,
-  TabItem.profile: Icons.person_outline
+  TabItem.library: Icons.video_collection_outlined
 };

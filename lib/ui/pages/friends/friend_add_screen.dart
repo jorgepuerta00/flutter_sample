@@ -41,7 +41,7 @@ class AddFriendPage extends StatelessWidget {
                     itemBuilder: (context, index) => Container(
                       child: CustomAvatar(
                           avatar: kContacts[index].name[0],
-                          text: kContacts[index].name),
+                          text: kContacts[index].name.split(' ')[0]),
                       margin: const EdgeInsets.only(top: 2),
                     ),
                   ),

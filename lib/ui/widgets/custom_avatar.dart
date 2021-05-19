@@ -12,11 +12,38 @@ class CustomAvatar extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            CircleAvatar(
-              child: Text(avatar),
-              radius: 30,
-            ),
-            CustomText(text: text.split(' ')[0])
+            if (avatar != null)
+              CircleAvatar(
+                child: Text(avatar),
+                radius: 30,
+              ),
+            if (avatar == null)
+              CircleAvatar(
+                  radius: 30.0,
+                  backgroundColor: Colors.blueGrey,
+                  child: CircleAvatar(
+                      child: Align(
+                        alignment: Alignment.bottomRight,
+                        child: Container(
+                            decoration: new BoxDecoration(
+                                border: new Border.all(
+                                  color: Colors.grey,
+                                ),
+                                borderRadius: const BorderRadius.all(
+                                    const Radius.circular(30))),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.white,
+                              radius: 12.0,
+                              child: Icon(
+                                Icons.add,
+                                size: 15.0,
+                                color: Color(0xFF404040),
+                              ),
+                            )),
+                      ),
+                      radius: 30.0,
+                      backgroundColor: Colors.transparent)),
+            CustomText(text: text)
           ],
         ));
   }

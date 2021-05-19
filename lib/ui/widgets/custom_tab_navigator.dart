@@ -74,6 +74,6 @@ class BuildPage extends StatelessWidget {
     TabItem.audiovisual: MediaPage(),
     TabItem.newm: Container(color: Colors.transparent),
     TabItem.channels: ChannelPage(),
-    TabItem.profile: ProfilePage()
+    TabItem.library: ProfilePage()
   };
 }

@@ -1,20 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/pages/home/home_screen.dart';
+import 'package:ourglass/ui/pages/user/signup/interests.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_label_widget.dart';
 
 class FindFriendsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    gotoHome() {
+    gotoInterests() {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));
+          .push(MaterialPageRoute(builder: (_) => InterestsPage()));
     }
 
     return Scaffold(
       appBar: AppBar(
           brightness: Brightness.light,
           title: Text('Find your friends'),
+          actions: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(right: 24),
+              child: TextButton(
+                child: Text('Skip'),
+                onPressed: () => gotoInterests(),
+              ),
+            ),
+          ],
           elevation: 0),
       body: SafeArea(
         top: true,
@@ -22,6 +31,7 @@ class FindFriendsPage extends StatelessWidget {
           LabelWidget(
               text:
                   "See which of your contacts are on “Name app” already and add them on your friends list.",
+              textAlign: TextAlign.center,
               fontWeight: FontWeight.bold,
               fontSize: 15.0,
               padding: const EdgeInsets.only(
@@ -46,7 +56,7 @@ class FindFriendsPage extends StatelessWidget {
                   Colors.blueAccent,
                   const EdgeInsets.only(left: 40, right: 40),
                   null,
-                  () => gotoHome()))
+                  () => gotoInterests()))
         ]),
       ),
     );
