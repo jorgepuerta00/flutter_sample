@@ -12,9 +12,9 @@ class _HomePage extends State<HomePage> {
   var _currentTab = TabItem.feed;
   final _navigatorKeys = {
     TabItem.feed: GlobalKey<NavigatorState>(),
-    TabItem.audiovisual: GlobalKey<NavigatorState>(),
+    TabItem.browse: GlobalKey<NavigatorState>(),
     TabItem.newm: GlobalKey<NavigatorState>(),
-    TabItem.channels: GlobalKey<NavigatorState>(),
+    TabItem.subscriptions: GlobalKey<NavigatorState>(),
     TabItem.library: GlobalKey<NavigatorState>(),
   };
 
@@ -48,9 +48,9 @@ class _HomePage extends State<HomePage> {
       child: Scaffold(
         body: Stack(children: <Widget>[
           _buildOffstageNavigator(TabItem.feed),
-          _buildOffstageNavigator(TabItem.audiovisual),
+          _buildOffstageNavigator(TabItem.browse),
           _buildOffstageNavigator(TabItem.newm),
-          _buildOffstageNavigator(TabItem.channels),
+          _buildOffstageNavigator(TabItem.subscriptions),
           _buildOffstageNavigator(TabItem.library),
         ]),
         bottomNavigationBar: BottomNavigation(

@@ -5,12 +5,14 @@ import 'package:ourglass/ui/pages/friends/widgets/contact_data.dart';
 import 'package:ourglass/ui/pages/messaging/messaging_screen.dart';
 import 'package:ourglass/ui/pages/profile/profile_screen.dart';
 import 'package:ourglass/ui/widgets/custom_avatar.dart';
+import 'package:ourglass/ui/widgets/custom_gesture_detector.dart';
 import 'package:ourglass/ui/widgets/custom_textfield.dart';
 
 class FeedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return CustomGestureDetector(
+        child: Scaffold(
       appBar: AppBar(
         brightness: Brightness.light,
         title: Container(
@@ -79,6 +81,6 @@ class FeedPage extends StatelessWidget {
           ],
         ),
       )),
-    );
+    ));
   }
 }

@@ -57,7 +57,7 @@ class AddFriendPage extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                child: ContactList(kContacts, false, false, () => {}),
+                child: ContactList(kContacts, false, false, (contact) => {}),
               ),
             )
           ],

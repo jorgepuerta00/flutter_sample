@@ -4,7 +4,7 @@ import 'package:ourglass/ui/widgets/custom_chip.dart';
 class ContactList extends StatelessWidget {
   final List<Contact> _contacts;
   final bool showButton;
-  final Function onPressed;
+  final Function(Contact) onPressed;
   final bool showLastMessage;
   ContactList(
       this._contacts, this.showButton, this.showLastMessage, this.onPressed);
@@ -30,14 +30,18 @@ class _ContactListItem extends ListTile {
   _ContactListItem(Contact contact, bool showButton, bool showLastMessage,
       Function onPressed)
       : super(
-            title: Text(contact.name),
+            title: Text(contact.name + ' ' + contact.lastname),
             subtitle: showLastMessage ? Text(contact.message) : null,
             leading: Container(
                 padding: EdgeInsets.symmetric(vertical: 2),
-                child: CircleAvatar(
-                  child: Text(contact.name[0]),
-                  radius: 40,
-                )),
+                child: InkWell(
+                    onTap: () => onPressed(contact),
+                    child: CircleAvatar(
+                      child: contact.lastname.isNotEmpty
+                          ? Text(contact.name[0] + contact.lastname[0])
+                          : Text(contact.name[0]),
+                      radius: 40,
+                    ))),
             trailing: Visibility(
                 child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -48,7 +52,10 @@ class _ContactListItem extends ListTile {
 
 class Contact {
   final String name;
+  final String lastname;
   final String email;
   final String message;
-  const Contact({this.name, this.email, this.message});
+  final String imgUrl;
+  const Contact(
+      {this.name, this.lastname, this.email, this.message, this.imgUrl});
 }

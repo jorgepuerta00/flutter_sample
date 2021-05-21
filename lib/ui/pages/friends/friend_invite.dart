@@ -3,20 +3,7 @@ import 'package:ourglass/ui/pages/friends/widgets/contact_data.dart';
 import 'package:ourglass/ui/pages/friends/widgets/contact_view.dart';
 import 'package:ourglass/ui/widgets/custom_textfield.dart';
 
-class InviteFriendPage extends StatefulWidget {
-  @override
-  _InviteFriendPage createState() => new _InviteFriendPage();
-}
-
-class _InviteFriendPage extends State<InviteFriendPage> {
-  bool pressed = false;
-
-  _changePressed() {
-    setState(() {
-      pressed = !pressed;
-    });
-  }
-
+class InviteFriendPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +29,7 @@ class _InviteFriendPage extends State<InviteFriendPage> {
             SearchTextField(),
             Expanded(
               flex: 1,
-              child: ContactList(kContacts, true, false, _changePressed),
+              child: ContactList(kContacts, true, false, (contact) => {}),
             )
           ],
         ),

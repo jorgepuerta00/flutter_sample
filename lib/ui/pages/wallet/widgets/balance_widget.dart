@@ -10,11 +10,8 @@ class BalanceWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 24.0, horizontal: 42),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(8),
-              topRight: Radius.circular(8),
-              bottomLeft: Radius.circular(8),
-              bottomRight: Radius.circular(8)),
+          border: Border.all(color: Colors.grey),
+          borderRadius: BorderRadius.all(Radius.circular(16)),
           color: Colors.transparent),
       height: 120,
       child: Center(

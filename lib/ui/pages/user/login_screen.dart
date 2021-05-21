@@ -4,6 +4,7 @@ import 'package:ourglass/ui/pages/user/signup/create_user.dart';
 import 'package:ourglass/ui/pages/user/widgets/main_widget.dart';
 import 'package:ourglass/ui/pages/user/login/login_widget.dart';
 import 'package:ourglass/ui/pages/user/signup/signup_widget.dart';
+import 'package:ourglass/ui/widgets/custom_gesture_detector.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -61,15 +62,22 @@ class _LoginScreenState extends State<LoginScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        bottomNavigationBar: null,
-        body: Container(
-            height: MediaQuery.of(context).size.height,
-            child: PageView(
-              controller: _controller,
-              physics: new AlwaysScrollableScrollPhysics(),
-              children: <Widget>[loginPage(), startPage(), signupPage()],
-              scrollDirection: Axis.horizontal,
-            )));
+    return CustomGestureDetector(
+        child: Scaffold(
+            resizeToAvoidBottomInset: true,
+            bottomNavigationBar: null,
+            body: SingleChildScrollView(
+                child: Container(
+                    height: MediaQuery.of(context).size.height,
+                    child: PageView(
+                      controller: _controller,
+                      physics: new AlwaysScrollableScrollPhysics(),
+                      children: <Widget>[
+                        loginPage(),
+                        startPage(),
+                        signupPage()
+                      ],
+                      scrollDirection: Axis.horizontal,
+                    )))));
   }
 }

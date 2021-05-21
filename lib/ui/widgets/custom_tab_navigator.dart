@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ourglass/ui/pages/browse/browse_screen.dart';
 import 'package:ourglass/ui/pages/channels/channel_screen.dart';
 import 'package:ourglass/ui/pages/feed/feed_screens.dart';
-import 'package:ourglass/ui/pages/media/media_screen.dart';
 import 'package:ourglass/ui/pages/profile/profile_screen.dart';
 import 'package:ourglass/ui/widgets/custom_tab_item.dart';
 
@@ -71,9 +71,9 @@ class BuildPage extends StatelessWidget {
 
   final Map<TabItem, Widget> children = {
     TabItem.feed: FeedPage(),
-    TabItem.audiovisual: MediaPage(),
+    TabItem.browse: BrowsePage(),
     TabItem.newm: Container(color: Colors.transparent),
-    TabItem.channels: ChannelPage(),
+    TabItem.subscriptions: ChannelPage(),
     TabItem.library: ProfilePage()
   };
 }

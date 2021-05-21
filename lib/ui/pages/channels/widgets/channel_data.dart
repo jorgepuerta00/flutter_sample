@@ -10,4 +10,13 @@ const kChannels = <Channel>[
   Channel(name: 'User Channel Name', description: 'Description'),
   Channel(name: 'User Channel Name', description: 'Description'),
   Channel(name: 'User Channel Name', description: 'Description'),
+  Channel(name: 'User Channel Name', description: 'Description'),
+  Channel(name: 'User Channel Name', description: 'Description'),
+  Channel(name: 'User Channel Name', description: 'Description'),
+  Channel(name: 'User Channel Name', description: 'Description'),
+  Channel(name: 'User Channel Name', description: 'Description'),
+  Channel(name: 'User Channel Name', description: 'Description'),
+  Channel(name: 'User Channel Name', description: 'Description'),
+  Channel(name: 'User Channel Name', description: 'Description'),
+  Channel(name: 'User Channel Name', description: 'Description'),
 ];

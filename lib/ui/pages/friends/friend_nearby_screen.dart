@@ -30,7 +30,7 @@ class NearbyFriendPage extends StatelessWidget {
               SearchTextField(),
               Container(
                 height: MediaQuery.of(context).size.height * 0.8,
-                child: ContactList(kContacts, false, false, () => {}),
+                child: ContactList(kContacts, false, false, (contact) => {}),
               )
             ],
           ),

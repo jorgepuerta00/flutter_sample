@@ -4,7 +4,6 @@ import 'package:ourglass/ui/pages/user/widgets/interest_view.dart';
 import 'package:ourglass/ui/pages/user/widgets/interests_data.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_label_widget.dart';
-import 'package:ourglass/ui/widgets/custom_textfield.dart';
 
 class InterestsPage extends StatelessWidget {
   @override

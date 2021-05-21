@@ -48,3 +48,33 @@ class CustomAvatar extends StatelessWidget {
         ));
   }
 }
+
+class CustomCircleAvatar extends StatelessWidget {
+  final String imgUrl;
+  final String label;
+  const CustomCircleAvatar({Key key, @required this.imgUrl, this.label})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: 40,
+        height: 40,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+        ),
+        child: (() {
+          if (imgUrl != null && imgUrl.isNotEmpty) {
+            print("mundo");
+            return CircleAvatar(
+              backgroundImage: NetworkImage("$imgUrl"),
+            );
+          } else {
+            print("hola");
+            return CircleAvatar(
+              child: Text(label),
+            );
+          }
+        }()));
+  }
+}

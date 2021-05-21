@@ -11,16 +11,19 @@ class BottomNavigation extends StatelessWidget {
     return BottomNavigationBar(
       selectedItemColor: Colors.blue,
       type: BottomNavigationBarType.fixed,
+      selectedFontSize: 13,
+      unselectedFontSize: 13,
       items: [
         _buildItem(TabItem.feed),
-        _buildItem(TabItem.audiovisual),
+        _buildItem(TabItem.browse),
         _buildItem(TabItem.newm),
-        _buildItem(TabItem.channels),
+        _buildItem(TabItem.subscriptions),
         _buildItem(TabItem.library),
       ],
       onTap: (index) => onSelectTab(
         TabItem.values[index],
       ),
+      currentIndex: currentTab.index,
     );
   }
 

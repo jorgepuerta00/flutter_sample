@@ -6,6 +6,7 @@ import 'package:ourglass/ui/pages/security/secutiry_screen.dart';
 import 'package:ourglass/ui/pages/settings/settings_screen.dart';
 import 'package:ourglass/ui/pages/user/login_screen.dart';
 import 'package:ourglass/ui/pages/wallet/wallet_screen.dart';
+import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -25,9 +26,8 @@ class ProfilePage extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 30),
             child: IconButton(
-              icon: Icon(Icons.edit_outlined, size: 30),
-              onPressed: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (_) => EditProfilePage())),
+              icon: Icon(Icons.more_horiz_outlined, size: 30),
+              onPressed: () => {},
             ),
           ),
         ],
@@ -56,40 +56,81 @@ class ProfilePage extends StatelessWidget {
                   padding: const EdgeInsets.all(1),
                   child: Text('@rezadari'),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(5),
-                  child: Text('United States, California'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                ),
-                Divider(),
-                ListTile(
-                  title: Text('Friends'),
-                  trailing: Icon(Icons.chevron_right),
-                  onTap: () => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => FriendPage())),
-                ),
-                Divider(),
-                ListTile(
-                  title: Text('My Digital Wallet'),
-                  trailing: Icon(Icons.chevron_right),
-                  onTap: () => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => WalletPage())),
-                ),
-                Divider(),
-                ListTile(
-                  title: Text('Security'),
-                  trailing: Icon(Icons.chevron_right),
-                  onTap: () => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => SecurityPage())),
-                ),
-                Divider(),
-                ListTile(
-                  title: Text('My Downloads'),
-                  trailing: Icon(Icons.chevron_right),
-                  onTap: () => Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (_) => DownloadsPage())),
+                ButtonShape(ButtonType.textButton).build(
+                    context: context,
+                    button: new Button(
+                        "Edit profile",
+                        TextAlign.center,
+                        15,
+                        70,
+                        FontWeight.bold,
+                        Colors.blueAccent,
+                        Colors.white,
+                        Colors.blueAccent,
+                        const EdgeInsets.only(left: 140, right: 140, top: 20.0),
+                        null,
+                        () => Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => EditProfilePage())))),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 24.0, horizontal: 12),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.all(Radius.circular(16)),
+                      color: Colors.transparent),
+                  height: 120,
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            IconButton(
+                              icon: Icon(Icons.people_alt_outlined, size: 35),
+                              onPressed: () => Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (_) => FriendPage())),
+                            ),
+                            Text(
+                              'Friends',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            IconButton(
+                              icon: Icon(Icons.rss_feed_outlined, size: 35),
+                              onPressed: () => Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (_) => FriendPage())),
+                            ),
+                            Text(
+                              'Channels',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            IconButton(
+                              icon: Icon(Icons.wallet_membership_outlined,
+                                  size: 35),
+                              onPressed: () => Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (_) => WalletPage())),
+                            ),
+                            Text(
+                              'Wallet',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 ),
                 Divider(),
                 ListTile(
@@ -97,6 +138,20 @@ class ProfilePage extends StatelessWidget {
                   trailing: Icon(Icons.chevron_right),
                   onTap: () => Navigator.of(context)
                       .push(MaterialPageRoute(builder: (_) => SettingsPage())),
+                ),
+                Divider(),
+                ListTile(
+                  title: Text('Help & Support'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => DownloadsPage())),
+                ),
+                Divider(),
+                ListTile(
+                  title: Text('FAQ'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => SecurityPage())),
                 ),
                 Divider(),
                 ListTile(

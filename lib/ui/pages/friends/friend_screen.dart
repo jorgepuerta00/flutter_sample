@@ -51,7 +51,7 @@ class FriendPage extends StatelessWidget {
             )),
             Expanded(
                 child: Container(
-              child: ContactList(kContacts, false, false, () => {}),
+              child: ContactList(kContacts, false, false, (contact) => {}),
             ))
           ],
         ),
