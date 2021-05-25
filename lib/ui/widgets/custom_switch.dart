@@ -26,7 +26,7 @@ class _CustomSwitch extends State<CustomSwitch> {
         title: Text(widget.title),
         subtitle: Text(widget.subtitle),
         trailing: CupertinoSwitch(
-          activeColor: Colors.blueAccent,
+          activeColor: Colors.blue,
           value: isSwitched,
           onChanged: (bool value) {
             setState(() {

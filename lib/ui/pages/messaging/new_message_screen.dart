@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ourglass/ui/pages/friends/widgets/contact_data.dart';
 import 'package:ourglass/ui/pages/friends/widgets/contact_view.dart';
-import 'package:ourglass/ui/pages/messaging/widgets/chat.dart';
+import 'package:ourglass/ui/pages/messaging/chat/chat.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 import 'package:ourglass/ui/widgets/custom_textfield.dart';
 
@@ -9,8 +9,8 @@ class NewMessagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     gotoNewChat(Contact contact) {
-      Navigator.of(context).push(
-          MaterialPageRoute(builder: (_) => ChatScreen(contact: contact)));
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (_) => ChatScreen(contact: contact, isGroup: false)));
     }
 
     return Scaffold(
@@ -33,11 +33,14 @@ class NewMessagePage extends StatelessWidget {
         padding: const EdgeInsets.only(top: 8.0),
         child: Column(
           children: <Widget>[
-            SearchTextField(),
+            SearchTextField(hintText: 'Search'),
             Expanded(
                 child: Container(
-                    child: ContactList(kContacts, false, true,
-                        (contact) => gotoNewChat(contact))))
+                    child: ContactList(
+                        contacts: kContacts,
+                        showButton: false,
+                        showLastMessage: true,
+                        onPressed: (contact) => gotoNewChat(contact))))
           ],
         ),
       )),

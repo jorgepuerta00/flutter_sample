@@ -51,7 +51,7 @@ class FeedPage extends StatelessWidget {
         padding: const EdgeInsets.only(top: 8.0),
         child: Column(
           children: <Widget>[
-            SearchTextField(),
+            SearchTextField(hintText: 'Search'),
             Container(
                 padding: const EdgeInsets.only(left: 16, right: 24),
                 child: SizedBox(
@@ -75,7 +75,7 @@ class FeedPage extends StatelessWidget {
                 )),
             Expanded(
               child: Container(
-                child: FeedList(kFeedsbyCategory),
+                child: FeedList(categories: kFeedsbyCategory, primary: true),
               ),
             )
           ],

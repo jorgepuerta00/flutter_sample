@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ourglass/ui/pages/downloads/downloads_screen.dart';
 import 'package:ourglass/ui/pages/friends/friend_screen.dart';
-import 'package:ourglass/ui/pages/profile/edit_profile.dart';
+import 'package:ourglass/ui/pages/profile/editprofile/edit_profile.dart';
 import 'package:ourglass/ui/pages/security/secutiry_screen.dart';
 import 'package:ourglass/ui/pages/settings/settings_screen.dart';
 import 'package:ourglass/ui/pages/user/login_screen.dart';
 import 'package:ourglass/ui/pages/wallet/wallet_screen.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
+import 'package:ourglass/ui/widgets/custom_divider.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -59,18 +60,17 @@ class ProfilePage extends StatelessWidget {
                 ButtonShape(ButtonType.textButton).build(
                     context: context,
                     button: new Button(
-                        "Edit profile",
-                        TextAlign.center,
-                        15,
-                        70,
-                        FontWeight.bold,
-                        Colors.blueAccent,
-                        Colors.white,
-                        Colors.blueAccent,
-                        const EdgeInsets.only(left: 140, right: 140, top: 20.0),
-                        null,
-                        () => Navigator.of(context).push(MaterialPageRoute(
-                            builder: (_) => EditProfilePage())))),
+                        text: "Edit profile",
+                        textAlign: TextAlign.center,
+                        fontWeight: FontWeight.bold,
+                        textColor: Colors.blue,
+                        backgroundColor: Colors.white,
+                        borderColor: Colors.blue,
+                        margin: const EdgeInsets.only(
+                            left: 140, right: 140, top: 20.0),
+                        onPressed: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (_) => EditProfilePage())))),
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 24.0, horizontal: 12),
                   decoration: BoxDecoration(
@@ -132,28 +132,28 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Divider(),
+                CustomDivider(color: Colors.grey),
                 ListTile(
                   title: Text('Settings'),
                   trailing: Icon(Icons.chevron_right),
                   onTap: () => Navigator.of(context)
                       .push(MaterialPageRoute(builder: (_) => SettingsPage())),
                 ),
-                Divider(),
+                CustomDivider(color: Colors.grey),
                 ListTile(
                   title: Text('Help & Support'),
                   trailing: Icon(Icons.chevron_right),
                   onTap: () => Navigator.of(context)
                       .push(MaterialPageRoute(builder: (_) => DownloadsPage())),
                 ),
-                Divider(),
+                CustomDivider(color: Colors.grey),
                 ListTile(
                   title: Text('FAQ'),
                   trailing: Icon(Icons.chevron_right),
                   onTap: () => Navigator.of(context)
                       .push(MaterialPageRoute(builder: (_) => SecurityPage())),
                 ),
-                Divider(),
+                CustomDivider(color: Colors.grey),
                 ListTile(
                   title: Text('Log out'),
                   onTap: () => gotoLoginPage(),

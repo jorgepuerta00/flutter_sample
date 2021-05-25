@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_divider.dart';
 import 'package:ourglass/ui/widgets/custom_icon.dart';
+import 'package:ourglass/ui/widgets/custom_text.dart';
 import 'package:ourglass/ui/widgets/custom_textfield.dart';
 import 'package:ourglass/ui/widgets/custom_label_widget.dart';
 
 class SignUpWidget extends StatelessWidget {
   final Function onPressed;
-  const SignUpWidget({this.onPressed});
+  final Function onLogIn;
+  const SignUpWidget({this.onPressed, this.onLogIn});
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -16,7 +18,7 @@ class SignUpWidget extends StatelessWidget {
         children: <Widget>[
           CustomIcon(
               iconData: Icons.play_circle_fill,
-              color: Colors.blueAccent,
+              color: Colors.blue,
               size: 50.0,
               padding: EdgeInsets.all(100.0)),
           LabelWidget(
@@ -40,27 +42,31 @@ class SignUpWidget extends StatelessWidget {
               padding: const EdgeInsets.only(left: 40.0)),
           CustomPasswordField(),
           CustomDivider(),
-          LabelWidget(
-              text: "Already have an account?",
-              fontWeight: FontWeight.bold,
-              fontSize: 15.0,
-              padding: const EdgeInsets.only(right: 30.0),
-              textAlign: TextAlign.end,
-              onPressed: () => {}),
           ButtonShape(ButtonType.textButton).build(
               context: context,
               button: new Button(
-                  "Next",
-                  TextAlign.center,
-                  15,
-                  70,
-                  FontWeight.bold,
-                  Colors.white,
-                  Colors.blueAccent,
-                  Colors.blueAccent,
-                  const EdgeInsets.only(left: 30.0, right: 30.0, top: 50.0),
-                  const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  onPressed)),
+                  text: "Next",
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold,
+                  textColor: Colors.blue,
+                  backgroundColor: Colors.white,
+                  borderColor: Colors.blue,
+                  onPressed: onPressed)),
+          Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                CustomText(
+                    text: 'Already have an account? ',
+                    fontWeight: FontWeight.bold),
+                InkWell(
+                  child: CustomText(
+                      text: 'Log in',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue),
+                  onTap: onLogIn,
+                ),
+              ])
         ],
       ),
     );

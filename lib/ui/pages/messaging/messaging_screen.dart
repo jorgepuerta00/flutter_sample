@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/pages/friends/friend_nearby_screen.dart';
 import 'package:ourglass/ui/pages/friends/widgets/contact_data.dart';
 import 'package:ourglass/ui/pages/friends/widgets/contact_view.dart';
-import 'package:ourglass/ui/pages/messaging/widgets/new_message.dart';
+import 'package:ourglass/ui/pages/messaging/creategroup/add_photo_group.dart';
+import 'package:ourglass/ui/pages/messaging/joingroup/tags_group.dart';
+import 'package:ourglass/ui/pages/messaging/new_message_screen.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 import 'package:ourglass/ui/widgets/custom_textfield.dart';
 
@@ -18,8 +19,9 @@ class MessagingPage extends StatelessWidget {
         actions: <Widget>[
           Container(
             child: IconButton(
-              icon: Icon(Icons.person_outline, size: 30),
-              onPressed: () => {},
+              icon: Icon(Icons.group_work_outlined, size: 30),
+              onPressed: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => PhotoGroupPage())),
             ),
           ),
           Container(
@@ -37,7 +39,7 @@ class MessagingPage extends StatelessWidget {
         padding: const EdgeInsets.only(top: 8.0),
         child: Column(
           children: <Widget>[
-            SearchTextField(),
+            SearchTextField(hintText: 'Search'),
             Container(
                 child: Padding(
               padding: const EdgeInsets.only(left: 16.0),
@@ -45,11 +47,15 @@ class MessagingPage extends StatelessWidget {
                   title: Text('Join groups'),
                   leading: Icon(Icons.group_add),
                   onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => NearbyFriendPage()))),
+                      MaterialPageRoute(builder: (_) => TagsGroupPage()))),
             )),
             Expanded(
                 child: Container(
-              child: ContactList(kContacts, false, true, (contact) => {}),
+              child: ContactList(
+                  contacts: kContacts,
+                  showButton: false,
+                  showLastMessage: true,
+                  onPressed: (contact) => {}),
             ))
           ],
         ),

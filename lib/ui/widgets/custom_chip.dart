@@ -17,11 +17,11 @@ class _CustomChip extends State<CustomChip> {
     return ChoiceChip(
         backgroundColor: Colors.white,
         label: isSelected ? Text(widget.activeText) : Text(widget.inactiveText),
-        side: BorderSide(color: Colors.blueAccent),
-        selectedColor: Colors.blueAccent,
+        side: BorderSide(color: Colors.blue),
+        selectedColor: Colors.blue,
         labelStyle: isSelected
             ? TextStyle(color: Colors.white, fontWeight: FontWeight.bold)
-            : TextStyle(color: Colors.blueAccent, fontWeight: FontWeight.bold),
+            : TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
         selected: isSelected,
         onSelected: (selected) {
           setState(() {

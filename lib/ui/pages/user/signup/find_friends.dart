@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/pages/user/signup/interests.dart';
+import 'package:ourglass/ui/pages/user/signup/search_contacts.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_label_widget.dart';
 
 class FindFriendsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    gotoInterests() {
+    nextPage() {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (_) => InterestsPage()));
+          .push(MaterialPageRoute(builder: (_) => SearchMyContactsPage()));
     }
 
     return Scaffold(
@@ -20,7 +20,7 @@ class FindFriendsPage extends StatelessWidget {
               padding: EdgeInsets.only(right: 24),
               child: TextButton(
                 child: Text('Skip'),
-                onPressed: () => gotoInterests(),
+                onPressed: () => nextPage(),
               ),
             ),
           ],
@@ -45,18 +45,15 @@ class FindFriendsPage extends StatelessWidget {
           ),
           ButtonShape(ButtonType.textButton).build(
               context: context,
-              button: new Button(
-                  "Search my contacts",
-                  TextAlign.center,
-                  15,
-                  70,
-                  FontWeight.bold,
-                  Colors.blueAccent,
-                  Colors.white,
-                  Colors.blueAccent,
-                  const EdgeInsets.only(left: 40, right: 40),
-                  null,
-                  () => gotoInterests()))
+              button: Button(
+                  text: "Search my contacts",
+                  textAlign: TextAlign.center,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  textColor: Colors.blue,
+                  backgroundColor: Colors.white,
+                  borderColor: Colors.blue,
+                  onPressed: () => nextPage()))
         ]),
       ),
     );

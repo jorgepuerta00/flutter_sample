@@ -7,7 +7,7 @@ import 'package:ourglass/ui/widgets/custom_textfield.dart';
 class CreateUserPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    gotoProfilePhotoPage() {
+    nextPage() {
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (_) => ProfilePhotoPage()));
     }
@@ -21,7 +21,7 @@ class CreateUserPage extends StatelessWidget {
               padding: EdgeInsets.only(right: 24),
               child: TextButton(
                 child: Text('Skip'),
-                onPressed: () => gotoProfilePhotoPage(),
+                onPressed: () => nextPage(),
               ),
             ),
           ],
@@ -46,17 +46,13 @@ class CreateUserPage extends StatelessWidget {
           ButtonShape(ButtonType.textButton).build(
               context: context,
               button: new Button(
-                  "Next",
-                  TextAlign.center,
-                  15,
-                  70,
-                  FontWeight.bold,
-                  Colors.blueAccent,
-                  Colors.white,
-                  Colors.blueAccent,
-                  const EdgeInsets.only(left: 40, right: 40, top: 100.0),
-                  null,
-                  () => gotoProfilePhotoPage()))
+                  text: "Next",
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold,
+                  textColor: Colors.blue,
+                  backgroundColor: Colors.white,
+                  borderColor: Colors.blue,
+                  onPressed: () => nextPage()))
         ]),
       ),
     );

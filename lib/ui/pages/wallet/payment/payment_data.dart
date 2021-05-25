@@ -1,4 +1,4 @@
-import 'package:ourglass/ui/pages/wallet/widgets/payment_view.dart';
+import 'package:ourglass/ui/pages/wallet/payment/payment_view.dart';
 
 const kpayments = <Payment>[
   Payment(

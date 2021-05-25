@@ -29,17 +29,13 @@ class EditEmailPage extends StatelessWidget {
           ButtonShape(ButtonType.textButton).build(
               context: context,
               button: new Button(
-                  "Save",
-                  TextAlign.center,
-                  15,
-                  70,
-                  FontWeight.bold,
-                  Colors.blueAccent,
-                  Colors.white,
-                  Colors.blueAccent,
-                  const EdgeInsets.only(left: 140, right: 140, top: 100.0),
-                  null,
-                  () => {}))
+                  text: "Save",
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold,
+                  textColor: Colors.blue,
+                  backgroundColor: Colors.white,
+                  borderColor: Colors.blue,
+                  onPressed: () => {}))
         ]),
       ),
     );

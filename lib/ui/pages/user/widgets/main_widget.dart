@@ -12,8 +12,8 @@ class MainWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Container(
       height: MediaQuery.of(context).size.height,
-      decoration: backgroundImage(
-          Colors.blueAccent, 'assets/images/full-bloom.png', 0.1),
+      decoration:
+          backgroundImage(Colors.blue, 'assets/images/full-bloom.png', 0.1),
       child: new Column(
         children: <Widget>[
           CustomIcon(
@@ -22,34 +22,32 @@ class MainWidget extends StatelessWidget {
               size: 40.0,
               padding: EdgeInsets.only(top: 250.0)),
           TitleWidget(),
-          ButtonShape(ButtonType.outlinedButton).build(
-              context: context,
-              button: new Button(
-                  "Sign Up",
-                  TextAlign.center,
-                  15,
-                  70,
-                  FontWeight.bold,
-                  Colors.white,
-                  Colors.blueAccent,
-                  Colors.blueAccent,
-                  const EdgeInsets.only(left: 30.0, right: 30.0, top: 150.0),
-                  const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  onSignupPressed)),
           ButtonShape(ButtonType.textButton).build(
               context: context,
               button: new Button(
-                  "Log In",
-                  TextAlign.center,
-                  15,
-                  70,
-                  FontWeight.bold,
-                  Colors.blueAccent,
-                  Colors.white,
-                  Colors.white,
-                  const EdgeInsets.only(left: 30.0, right: 30.0, top: 30.0),
-                  const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  onLoginPressed))
+                  text: "Sign Up",
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold,
+                  textColor: Colors.white,
+                  backgroundColor: Colors.blue[600],
+                  borderColor: Colors.blue[600],
+                  margin: const EdgeInsets.only(left: 30, right: 30, top: 150),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                  onPressed: onSignupPressed)),
+          ButtonShape(ButtonType.textButton).build(
+              context: context,
+              button: new Button(
+                  text: "Log In",
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold,
+                  textColor: Colors.blue,
+                  backgroundColor: Colors.white,
+                  borderColor: Colors.white,
+                  margin: const EdgeInsets.only(left: 30, right: 30, top: 30),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                  onPressed: onLoginPressed)),
         ],
       ),
     );

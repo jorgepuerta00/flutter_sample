@@ -24,11 +24,13 @@ class _LoginScreenState extends State<LoginScreen>
   }
 
   Widget loginPage() {
-    return new LoginWidget(onPressed: () => gotoHome());
+    return new LoginWidget(
+        onPressed: () => gotoHome(), onSignUp: () => gotoSignup());
   }
 
   Widget signupPage() {
-    return new SignUpWidget(onPressed: () => gotoCreateUser());
+    return new SignUpWidget(
+        onPressed: () => gotoCreateUser(), onLogIn: () => gotoLogin());
   }
 
   gotoLogin() {

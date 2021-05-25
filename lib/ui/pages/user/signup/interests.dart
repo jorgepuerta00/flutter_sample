@@ -8,7 +8,7 @@ import 'package:ourglass/ui/widgets/custom_label_widget.dart';
 class InterestsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    gotoHome() {
+    nextPage() {
       Navigator.of(context)
           .pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));
     }
@@ -22,7 +22,7 @@ class InterestsPage extends StatelessWidget {
               padding: EdgeInsets.only(right: 24),
               child: TextButton(
                 child: Text('Skip'),
-                onPressed: () => gotoHome(),
+                onPressed: () => nextPage(),
               ),
             ),
           ],
@@ -41,17 +41,13 @@ class InterestsPage extends StatelessWidget {
           ButtonShape(ButtonType.textButton).build(
               context: context,
               button: new Button(
-                  "Finish",
-                  TextAlign.center,
-                  15,
-                  70,
-                  FontWeight.bold,
-                  Colors.blueAccent,
-                  Colors.white,
-                  Colors.blueAccent,
-                  const EdgeInsets.only(left: 40, right: 40, top: 20),
-                  null,
-                  () => gotoHome()))
+                  text: "Finish",
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold,
+                  textColor: Colors.blue,
+                  backgroundColor: Colors.white,
+                  borderColor: Colors.blue,
+                  onPressed: () => nextPage()))
         ]),
       ),
     );

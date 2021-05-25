@@ -6,7 +6,7 @@ import 'package:ourglass/ui/widgets/custom_label_widget.dart';
 class ProfilePhotoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    gotoFindFriendsPage() {
+    nextPage() {
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (_) => FindFriendsPage()));
     }
@@ -19,7 +19,7 @@ class ProfilePhotoPage extends StatelessWidget {
               padding: EdgeInsets.only(right: 24),
               child: TextButton(
                 child: Text('Skip'),
-                onPressed: () => gotoFindFriendsPage(),
+                onPressed: () => nextPage(),
               ),
             ),
           ],
@@ -62,17 +62,13 @@ class ProfilePhotoPage extends StatelessWidget {
           ButtonShape(ButtonType.textButton).build(
               context: context,
               button: new Button(
-                  "Next",
-                  TextAlign.center,
-                  15,
-                  70,
-                  FontWeight.bold,
-                  Colors.blueAccent,
-                  Colors.white,
-                  Colors.blueAccent,
-                  const EdgeInsets.only(left: 40, right: 40, top: 100.0),
-                  null,
-                  () => gotoFindFriendsPage()))
+                  text: "Next",
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.bold,
+                  textColor: Colors.blue,
+                  backgroundColor: Colors.white,
+                  borderColor: Colors.blue,
+                  onPressed: () => nextPage()))
         ]),
       ),
     );

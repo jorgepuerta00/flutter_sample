@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ourglass/ui/pages/friends/widgets/contact_view.dart';
+import 'package:ourglass/ui/pages/messaging/settings/settings_group.dart';
 import 'package:ourglass/ui/pages/messaging/widgets/chat_data.dart';
 import 'package:ourglass/ui/pages/messaging/widgets/received_messages_widget.dart';
 import 'package:ourglass/ui/pages/messaging/widgets/sent_message_widget.dart';
@@ -7,8 +8,9 @@ import 'package:ourglass/ui/widgets/custom_avatar.dart';
 import 'package:ourglass/ui/widgets/custom_gesture_detector.dart';
 
 class ChatScreen extends StatefulWidget {
+  final bool isGroup;
   final Contact contact;
-  ChatScreen({@required this.contact});
+  ChatScreen({@required this.contact, @required this.isGroup});
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
@@ -19,6 +21,28 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
+    getChatTitle() {
+      if (widget.isGroup) {
+        return widget.contact.name;
+      } else {
+        try {
+          return widget.contact.name + ' ' + widget.contact.lastname;
+        } on Exception catch (_) {
+          return widget.contact.name;
+        }
+      }
+    }
+
+    gotoSettingsPage() {
+      print('mundo');
+      if (widget.isGroup) {
+        print('hola');
+
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (_) => SettingsGroupPage()));
+      }
+    }
+
     return CustomGestureDetector(
         child: Scaffold(
       appBar: AppBar(
@@ -27,17 +51,16 @@ class _ChatScreenState extends State<ChatScreen> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             CustomCircleAvatar(
-                imgUrl: widget.contact.imgUrl,
-                label: widget.contact.lastname.isNotEmpty
-                    ? widget.contact.name[0] + widget.contact.lastname[0]
-                    : widget.contact.name[0]),
+                imgUrl: widget.contact.imgUrl, label: widget.contact.name[0]),
             SizedBox(width: 15),
             Flexible(
               child: new Container(
-                  child: new Text(
-                widget.contact.name + ' ' + widget.contact.lastname,
-                overflow: TextOverflow.clip,
-              )),
+                  child: new InkWell(
+                      onTap: () => gotoSettingsPage(),
+                      child: Text(
+                        getChatTitle(),
+                        overflow: TextOverflow.clip,
+                      ))),
             )
           ],
         ),

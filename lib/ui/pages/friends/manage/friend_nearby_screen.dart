@@ -27,10 +27,14 @@ class NearbyFriendPage extends StatelessWidget {
           padding: const EdgeInsets.only(top: 8.0),
           child: ListView(
             children: <Widget>[
-              SearchTextField(),
+              SearchTextField(hintText: 'Search'),
               Container(
                 height: MediaQuery.of(context).size.height * 0.8,
-                child: ContactList(kContacts, false, false, (contact) => {}),
+                child: ContactList(
+                    contacts: kContacts,
+                    showButton: false,
+                    showLastMessage: false,
+                    onPressed: (contact) => {}),
               )
             ],
           ),

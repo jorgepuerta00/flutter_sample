@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/pages/friends/friend_add_screen.dart';
-import 'package:ourglass/ui/pages/friends/friend_invite.dart';
-import 'package:ourglass/ui/pages/friends/friend_location.dart';
+import 'package:ourglass/ui/pages/friends/manage/friend_add_screen.dart';
+import 'package:ourglass/ui/pages/friends/manage/friend_invite.dart';
+import 'package:ourglass/ui/pages/friends/manage/friend_location.dart';
 import 'package:ourglass/ui/pages/friends/widgets/contact_data.dart';
 import 'package:ourglass/ui/pages/friends/widgets/contact_view.dart';
 import 'package:ourglass/ui/widgets/custom_textfield.dart';
@@ -30,7 +30,7 @@ class FriendPage extends StatelessWidget {
         padding: const EdgeInsets.only(top: 8.0),
         child: Column(
           children: <Widget>[
-            SearchTextField(),
+            SearchTextField(hintText: 'Search'),
             Container(
                 child: Padding(
               padding: const EdgeInsets.only(left: 16.0),
@@ -51,7 +51,11 @@ class FriendPage extends StatelessWidget {
             )),
             Expanded(
                 child: Container(
-              child: ContactList(kContacts, false, false, (contact) => {}),
+              child: ContactList(
+                  contacts: kContacts,
+                  showButton: false,
+                  showLastMessage: false,
+                  onPressed: (contact) => {}),
             ))
           ],
         ),

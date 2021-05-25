@@ -1,4 +1,4 @@
-import 'package:ourglass/ui/pages/wallet/widgets/report_view.dart';
+import 'package:ourglass/ui/pages/wallet/reports/report_view.dart';
 
 const kReports = <Report>[
   Report(

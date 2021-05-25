@@ -22,7 +22,7 @@ class SentMessageWidget extends StatelessWidget {
                 maxWidth: MediaQuery.of(context).size.width * .6),
             padding: const EdgeInsets.all(15.0),
             decoration: BoxDecoration(
-              color: Colors.blueAccent,
+              color: Colors.blue,
               border: Border.all(color: Colors.white, width: 0),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(25),

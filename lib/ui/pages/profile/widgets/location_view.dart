@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ourglass/ui/widgets/custom_divider.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class LocationList extends StatelessWidget {
@@ -9,7 +10,7 @@ class LocationList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: _locations.length,
-      padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
+      padding: EdgeInsets.only(left: 20, right: 20),
       scrollDirection: Axis.vertical,
       itemBuilder: (context, index) {
         return Column(
@@ -17,7 +18,8 @@ class LocationList extends StatelessWidget {
             ListTile(
               title: CustomText(text: _locations[index].name),
             ),
-            Divider(), //                           <-- Divider
+            CustomDivider(
+                color: Colors.grey), //                           <-- Divider
           ],
         );
       },

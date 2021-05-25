@@ -28,7 +28,7 @@ class AddFriendPage extends StatelessWidget {
         padding: const EdgeInsets.only(top: 8.0),
         child: Column(
           children: <Widget>[
-            SearchTextField(),
+            SearchTextField(hintText: 'Search'),
             Container(
                 padding:
                     const EdgeInsets.only(left: 16.0, right: 24.0, top: 16.0),
@@ -57,8 +57,13 @@ class AddFriendPage extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                child: ContactList(kContacts, false, false, (contact) => {}),
-              ),
+                  child: ContactList(
+                      contacts: kContacts,
+                      showButton: true,
+                      showLastMessage: false,
+                      inactiveText: 'Add friend',
+                      activeText: 'Requested',
+                      onPressed: (contact) => {})),
             )
           ],
         ),

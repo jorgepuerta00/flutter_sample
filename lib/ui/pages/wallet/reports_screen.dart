@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/pages/wallet/widgets/report_data.dart';
-import 'package:ourglass/ui/pages/wallet/widgets/report_view.dart';
+import 'package:ourglass/ui/pages/wallet/reports/report_data.dart';
+import 'package:ourglass/ui/pages/wallet/reports/report_view.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class ReportPage extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/pages/wallet/widgets/payment_data.dart';
-import 'package:ourglass/ui/pages/wallet/widgets/payment_view.dart';
+import 'package:ourglass/ui/pages/wallet/payment/payment_data.dart';
+import 'package:ourglass/ui/pages/wallet/payment/payment_view.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class PaymentWidget extends StatelessWidget {

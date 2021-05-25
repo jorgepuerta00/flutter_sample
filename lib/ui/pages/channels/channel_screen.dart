@@ -3,7 +3,7 @@ import 'package:ourglass/constants/theme.dart';
 import 'package:ourglass/ui/pages/channels/create_channel.dart';
 import 'package:ourglass/ui/pages/channels/widgets/channel_data.dart';
 import 'package:ourglass/ui/pages/channels/widgets/channel_view.dart';
-import 'package:ourglass/ui/pages/friends/friend_location.dart';
+import 'package:ourglass/ui/pages/friends/manage/friend_location.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 import 'package:ourglass/ui/widgets/custom_textfield.dart';
 import 'package:provider/provider.dart';
@@ -48,7 +48,7 @@ class ChannelPage extends StatelessWidget {
         padding: const EdgeInsets.only(top: 8.0),
         child: Column(
           children: <Widget>[
-            SearchTextField(),
+            SearchTextField(hintText: 'Search channel'),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
               child: ListTile(

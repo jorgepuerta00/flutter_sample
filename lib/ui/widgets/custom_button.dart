@@ -68,7 +68,9 @@ class CustomTextButton implements ButtonShape {
   Widget build({@required BuildContext context, @required Button button}) {
     return Container(
       width: context != null ? MediaQuery.of(context).size.width : button.width,
-      margin: button.margin,
+      margin: button.margin != null
+          ? button.margin
+          : const EdgeInsets.only(left: 40, right: 40, top: 20, bottom: 20),
       alignment: Alignment.center,
       child: new Row(
         children: <Widget>[
@@ -117,29 +119,19 @@ class Button {
   EdgeInsets margin;
   Function onPressed;
   EdgeInsets padding;
+  Widget suffixIcon;
 
   Button(
-      String text,
-      TextAlign textAlign,
-      double fontSize,
-      double width,
-      FontWeight fontWeight,
-      Color textColor,
-      Color backgroundColor,
-      Color borderColor,
-      EdgeInsets margin,
-      EdgeInsets padding,
-      Function onPressed) {
-    this.text = text;
-    this.textAlign = textAlign;
-    this.fontSize = fontSize;
-    this.width = width;
-    this.fontWeight = fontWeight;
-    this.textColor = textColor;
-    this.backgroundColor = backgroundColor;
-    this.borderColor = borderColor;
-    this.margin = margin;
-    this.onPressed = onPressed;
-    this.padding = padding;
-  }
+      {this.text,
+      this.textAlign,
+      this.fontSize,
+      this.width,
+      this.fontWeight,
+      this.textColor,
+      this.backgroundColor,
+      this.borderColor,
+      this.margin,
+      this.onPressed,
+      this.padding,
+      this.suffixIcon});
 }

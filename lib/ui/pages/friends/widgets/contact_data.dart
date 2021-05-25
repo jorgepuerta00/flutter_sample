@@ -94,3 +94,12 @@ const kContacts = <Contact>[
       email: 'belen.serrano@example.com ',
       message: 'Lorem ipsum dolor sit amet')
 ];
+
+const kGroups = <Contact>[
+  Contact(name: 'Group Name', message: 'Location', lastname: ''),
+  Contact(name: 'Group Name', message: 'Location', lastname: ''),
+  Contact(name: 'Group Name', message: 'Location', lastname: ''),
+  Contact(name: 'Group Name', message: 'Location', lastname: ''),
+  Contact(name: 'Group Name', message: 'Location', lastname: ''),
+  Contact(name: 'Group Name', message: 'Location', lastname: ''),
+];

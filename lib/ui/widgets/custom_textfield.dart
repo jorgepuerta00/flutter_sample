@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CustomPasswordField extends StatelessWidget {
+class CustomPasswordField extends StatefulWidget {
+  @override
+  _CustomPasswordField createState() => new _CustomPasswordField();
+}
+
+class _CustomPasswordField extends State<CustomPasswordField> {
+  bool _passwordVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -19,13 +26,24 @@ class CustomPasswordField extends StatelessWidget {
         children: <Widget>[
           new Expanded(
             child: TextField(
-              obscureText: true,
-              textAlign: TextAlign.left,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: '*********',
-              ),
-            ),
+                obscureText: !_passwordVisible,
+                textAlign: TextAlign.left,
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: '*********',
+                    suffixIcon: IconButton(
+                        icon: Icon(
+                          // Based on passwordVisible state choose the icon
+                          _passwordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: Colors.blue,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _passwordVisible = !_passwordVisible;
+                          });
+                        }))),
           ),
         ],
       ),
@@ -34,6 +52,8 @@ class CustomPasswordField extends StatelessWidget {
 }
 
 class SearchTextField extends StatelessWidget {
+  final String hintText;
+  const SearchTextField({@required this.hintText});
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -47,7 +67,7 @@ class SearchTextField extends StatelessWidget {
             child: TextField(
               style: TextStyle(
                 fontSize: 18.0,
-                color: Colors.blueAccent,
+                color: Colors.blue,
               ),
               decoration: InputDecoration(
                   contentPadding: EdgeInsets.fromLTRB(20.0, 5, 20.0, 15.0),
@@ -55,7 +75,7 @@ class SearchTextField extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(15)),
                   ),
-                  hintText: 'Search'),
+                  hintText: hintText),
             ),
           ),
         ],

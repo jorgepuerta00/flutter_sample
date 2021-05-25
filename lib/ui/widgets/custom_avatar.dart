@@ -65,12 +65,10 @@ class CustomCircleAvatar extends StatelessWidget {
         ),
         child: (() {
           if (imgUrl != null && imgUrl.isNotEmpty) {
-            print("mundo");
             return CircleAvatar(
               backgroundImage: NetworkImage("$imgUrl"),
             );
           } else {
-            print("hola");
             return CircleAvatar(
               child: Text(label),
             );

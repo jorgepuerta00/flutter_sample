@@ -42,7 +42,7 @@ class AudioPage extends StatelessWidget {
                               Container(
                                 padding: new EdgeInsets.only(top: 20),
                               ),
-                              SearchTextField(),
+                              SearchTextField(hintText: 'Search'),
                               Expanded(
                                 child: Container(
                                   child: AudioList(
@@ -62,7 +62,7 @@ class AudioPage extends StatelessWidget {
                               Container(
                                 padding: new EdgeInsets.only(top: 20),
                               ),
-                              SearchTextField(),
+                              SearchTextField(hintText: 'Search'),
                               Expanded(
                                 child: Container(
                                   child: AudioList(
@@ -82,7 +82,7 @@ class AudioPage extends StatelessWidget {
                               Container(
                                 padding: new EdgeInsets.only(top: 20),
                               ),
-                              SearchTextField(),
+                              SearchTextField(hintText: 'Search'),
                               Expanded(
                                 child: Container(
                                   child: AudioList(

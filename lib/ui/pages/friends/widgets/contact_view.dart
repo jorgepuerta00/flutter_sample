@@ -2,12 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:ourglass/ui/widgets/custom_chip.dart';
 
 class ContactList extends StatelessWidget {
-  final List<Contact> _contacts;
+  final List<Contact> contacts;
   final bool showButton;
   final Function(Contact) onPressed;
   final bool showLastMessage;
+  final String activeText;
+  final String inactiveText;
+
   ContactList(
-      this._contacts, this.showButton, this.showLastMessage, this.onPressed);
+      {this.contacts,
+      this.showButton,
+      this.activeText,
+      this.inactiveText,
+      this.showLastMessage,
+      this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +27,16 @@ class ContactList extends StatelessWidget {
   }
 
   List<_ContactListItem> _buildContactList() {
-    return _contacts
-        .map((contact) =>
-            _ContactListItem(contact, showButton, showLastMessage, onPressed))
+    return contacts
+        .map((contact) => _ContactListItem(contact, showButton, showLastMessage,
+            onPressed, activeText, inactiveText))
         .toList();
   }
 }
 
 class _ContactListItem extends ListTile {
   _ContactListItem(Contact contact, bool showButton, bool showLastMessage,
-      Function onPressed)
+      Function onPressed, String activeText, String inactiveText)
       : super(
             title: Text(contact.name + ' ' + contact.lastname),
             subtitle: showLastMessage ? Text(contact.message) : null,
@@ -46,7 +54,7 @@ class _ContactListItem extends ListTile {
                 child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: new CustomChip(
-                        activeText: "Invited", inactiveText: "Invite")),
+                        activeText: activeText, inactiveText: inactiveText)),
                 visible: showButton));
 }
 

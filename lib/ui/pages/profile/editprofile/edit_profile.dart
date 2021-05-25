@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/pages/profile/edit_fullname.dart';
-import 'package:ourglass/ui/pages/profile/edit_location.dart';
-import 'package:ourglass/ui/pages/profile/edit_username.dart';
+import 'package:ourglass/ui/pages/profile/editprofile/edit_about.dart';
+import 'package:ourglass/ui/pages/profile/editprofile/edit_fullname.dart';
+import 'package:ourglass/ui/pages/profile/editprofile/edit_username.dart';
 
 class EditProfilePage extends StatelessWidget {
   @override
@@ -76,10 +76,10 @@ class EditProfilePage extends StatelessWidget {
                 ),
                 Divider(),
                 ListTile(
-                  title: Text('Location'),
+                  title: Text('About'),
                   trailing: Icon(Icons.chevron_right),
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => EditLocationPage())),
+                  onTap: () => Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => AboutPage())),
                 ),
                 Divider(),
               ],

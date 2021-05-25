@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class FeedList extends StatelessWidget {
-  final List<Category> _categories;
-  FeedList(this._categories);
+  final List<Category> categories;
+  final bool primary;
+  FeedList({this.categories, this.primary});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 20),
       child: new ListView.builder(
+        primary: primary,
         shrinkWrap: true,
-        itemCount: _categories.length,
+        itemCount: categories.length,
         itemBuilder: (context, index) {
           return new Column(
             children: <Widget>[
@@ -22,7 +24,7 @@ class FeedList extends StatelessWidget {
                   children: <Widget>[
                     new Padding(padding: const EdgeInsets.only(right: 5.0)),
                     new CustomText(
-                        text: _categories[index].title,
+                        text: categories[index].title,
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold)
                   ],
@@ -35,7 +37,7 @@ class FeedList extends StatelessWidget {
                       SizedBox(width: 15),
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  itemCount: _categories[index].feeds.length,
+                  itemCount: categories[index].feeds.length,
                   itemBuilder: (context, jindex) {
                     return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,11 +55,11 @@ class FeedList extends StatelessWidget {
                             padding: const EdgeInsets.only(left: 5.0, top: 5.0),
                             child: Column(children: <Widget>[
                               CustomText(
-                                  text: _categories[index].feeds[jindex].title,
+                                  text: categories[index].feeds[jindex].title,
                                   fontWeight: FontWeight.bold),
                               CustomText(
                                   text:
-                                      _categories[index].feeds[jindex].subtitle)
+                                      categories[index].feeds[jindex].subtitle)
                             ]),
                           ),
                         ]);

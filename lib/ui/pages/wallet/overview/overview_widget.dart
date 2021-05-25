@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ourglass/ui/pages/wallet/deposit_screen.dart';
 import 'package:ourglass/ui/pages/wallet/widgets/balance_widget.dart';
-import 'package:ourglass/ui/pages/wallet/widgets/report_data.dart';
-import 'package:ourglass/ui/pages/wallet/widgets/report_view.dart';
+import 'package:ourglass/ui/pages/wallet/reports/report_data.dart';
+import 'package:ourglass/ui/pages/wallet/reports/report_view.dart';
 import 'package:ourglass/ui/pages/wallet/withdraw_screen.dart';
 import 'package:ourglass/ui/widgets/custom_button.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
@@ -34,31 +34,29 @@ class OverviewWidget extends StatelessWidget {
                 ButtonShape(ButtonType.textButton).build(
                     context: null,
                     button: new Button(
-                        "Top Up",
-                        TextAlign.center,
-                        15,
-                        150,
-                        FontWeight.bold,
-                        Colors.blueAccent,
-                        Colors.white,
-                        Colors.blueAccent,
-                        const EdgeInsets.only(left: 42, right: 0, top: 10),
-                        null,
-                        () => gotoWithdrawPage())),
+                        text: "Sign Up",
+                        textAlign: TextAlign.center,
+                        width: 150,
+                        fontWeight: FontWeight.bold,
+                        textColor: Colors.blue,
+                        backgroundColor: Colors.white,
+                        borderColor: Colors.blue,
+                        margin:
+                            const EdgeInsets.only(left: 42, right: 0, top: 10),
+                        onPressed: () => gotoWithdrawPage())),
                 ButtonShape(ButtonType.textButton).build(
                     context: null,
                     button: new Button(
-                        "Transfer",
-                        TextAlign.center,
-                        15,
-                        150,
-                        FontWeight.bold,
-                        Colors.blueAccent,
-                        Colors.white,
-                        Colors.blueAccent,
-                        const EdgeInsets.only(left: 42, right: 0, top: 10),
-                        null,
-                        () => gotoDepositPage()))
+                        text: "Transfer",
+                        textAlign: TextAlign.center,
+                        width: 150,
+                        fontWeight: FontWeight.bold,
+                        textColor: Colors.blue,
+                        backgroundColor: Colors.white,
+                        borderColor: Colors.blue,
+                        margin:
+                            const EdgeInsets.only(left: 42, right: 0, top: 10),
+                        onPressed: () => gotoDepositPage())),
               ],
             )),
             Container(

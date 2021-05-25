@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ourglass/ui/pages/wallet/widgets/overview_widget.dart';
-import 'package:ourglass/ui/pages/wallet/widgets/payment.dart';
-import 'package:ourglass/ui/pages/wallet/widgets/qr_widget.dart';
-import 'package:ourglass/ui/pages/wallet/widgets/report_widget.dart';
+import 'package:ourglass/ui/pages/wallet/overview/overview_widget.dart';
+import 'package:ourglass/ui/pages/wallet/payment/payment.dart';
+import 'package:ourglass/ui/pages/wallet/qr/qr_widget.dart';
+import 'package:ourglass/ui/pages/wallet/reports/report_widget.dart';
 import 'package:ourglass/ui/widgets/custom_text.dart';
 
 class WalletPage extends StatelessWidget {
